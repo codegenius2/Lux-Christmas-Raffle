@@ -1,0 +1,16 @@
+.navbar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vw;
+    width: 100vw;
+    background-color: #bbafa9;
+    /* position: fixed;
+    overflow: hidden;
+    top: 0; */
+}
+
+.lux-logo-navbar{
+    width: 40%;
+    height: auto;
+}

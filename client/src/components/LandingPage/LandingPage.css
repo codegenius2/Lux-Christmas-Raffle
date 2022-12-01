@@ -1,0 +1,35 @@
+@font-face {
+    font-family: Imported;
+    src: url("../../fonts/KingsCaslon-Italic.ttf");
+};
+/* .landing-page-container{
+    color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background-color: white;
+    font-weight: normal;
+}; */
+
+.textbloc {
+    display: block;
+    justify-content: center;
+    height: auto;
+    width: 100vw;
+    text-align: center;
+
+}
+
+.christmas-raffle {
+    height: 30vh;
+    font-size: 1.8em;
+    font-family: Imported;
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+};
+
+
+
+
