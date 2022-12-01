@@ -85,32 +85,41 @@ contract Nft is ERC721A, Ownable{
     _mint(msg.sender, _quantity);
   }
 
-    /**
-    * @dev set a new base uri. 
-    * example : https://website.com/ipfs/CID/
-    */
-    function setBaseURI(string memory _uri) external onlyOwner{
-      uri = _uri;
-    }
-    
-    /**
-    * @dev see chiru-labs ERC721A documentation
-    */
-    function _baseURI() internal view override returns (string memory) {
-        return uri;
-    }
+  /**
+  * @dev Mint NFT for partnership.
+  */
+  function mintPartnership(uint _quantity) external onlyOwner {
+    require(index + _quantity <= 999, "All the NFT are already minted !");
+    index += _quantity;
+    _mint(msg.sender, _quantity);
+  }
 
-    /**
-    * @dev return the tokenURI of a NFT
-    *
-    * Requirements:
-    *
-    * - Cannot get the URI of unexistent tokenID.
-    */
-    function tokenURI(uint256 tokenId) public view override returns (string memory) {
-        if (!_exists(tokenId)) revert URIQueryForNonexistentToken();
+  /**
+  * @dev set a new base uri. 
+  * example : https://website.com/ipfs/CID/
+  */
+  function setBaseURI(string memory _uri) external onlyOwner{
+    uri = _uri;
+  }
+  
+  /**
+  * @dev see chiru-labs ERC721A documentation
+  */
+  function _baseURI() internal view override returns (string memory) {
+      return uri;
+  }
 
-        string memory baseURI = _baseURI();
-        return bytes(baseURI).length != 0 ? string(abi.encodePacked(baseURI, _toString(tokenId), '.json')) : '';
-    }
+  /**
+  * @dev return the tokenURI of a NFT
+  *
+  * Requirements:
+  *
+  * - Cannot get the URI of unexistent tokenID.
+  */
+  function tokenURI(uint256 tokenId) public view override returns (string memory) {
+      if (!_exists(tokenId)) revert URIQueryForNonexistentToken();
+
+      string memory baseURI = _baseURI();
+      return bytes(baseURI).length != 0 ? string(abi.encodePacked(baseURI, _toString(tokenId), '.json')) : '';
+  }
 }

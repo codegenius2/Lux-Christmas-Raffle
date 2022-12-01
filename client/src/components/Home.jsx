@@ -53,6 +53,10 @@ export default function Home() {
  const stopMint = async () => {
   await contract.methods.stopMint().send({from: accounts[0]});
  }
+
+ const mintPartnership = async () => {
+  await contract.methods.mintPartnership(number).send({from : accounts[0]});
+ }
   return (
     <>
     {isOwner ? 
@@ -66,15 +70,28 @@ export default function Home() {
       <button onClick={setBaseURI}>set new price in wei</button>   Check this website to convert eth in wei : https://eth-converter.com/ <br />
       {isMintOn ? 
       <>
-      <div>Turn mint off</div>
+      Turn mint off
       <button onClick={stopMint}>Off</button>
       </>
       :
       <>
-      <div>Turn mint on</div>
+      Turn mint on
       <button onClick={enableMint}>ON</button>
       </>
-      }
+      }<br />
+      <select onChange={handleNumberChange} value={number} id="mint">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+      <button onClick={mintPartnership}>Mint</button>    Do not require to set mint on
     </div>
      :
     <div>
