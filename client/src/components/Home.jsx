@@ -5,7 +5,7 @@ import React from "react";
 
 export default function Home() {
   const {
-    state: { contract, accounts },
+    state: { contract, accounts, isOwner, isMintOn, mintPrice },
   } = useEth();
 
   const [number, setNumber] = useState(1);
@@ -15,34 +15,83 @@ export default function Home() {
   };
 
   const mint = () => {
-    contract.methods.mint(number).send({ from: accounts[0] });
-  };
-  const _mint = () => {
-    contract.methods._mint(accounts[0],number).send({ from: accounts[0] });
+    contract.methods.mint(number).send({ from: accounts[0], value: mintPrice });
   };
 
-  const [myNft, setMyNft] = useState("?");
+  // const [myNft, setMyNft] = useState("?");
 
-  const balanceOf = async () => {
-    const value = await contract.methods.balanceOf(accounts[0]).call();
-    setMyNft(value);
-  };
+  // const balanceOf = async () => {
+  //   const value = await contract.methods.balanceOf(accounts[0]).call();
+  //   setMyNft(value);
+  // };
+  const [uri, setURI] = useState();
 
+  const handleSetURI = e => {
+    setURI(e.target.value);
+  }
+  const setBaseURI = async () => {
+     await contract.methods.setBaseURI(uri).send({from : accounts[0]});
+  }
+
+  const [rrr, setRrr] = useState("?");
+  const getURI = async () => {
+    const value = await contract.methods.tokenURI(0).call({from : accounts[0]});
+    setRrr(value);
+ }
+  
+ const [price, setPrice] = useState();
+ const handleChangePrice = e => {
+  if (e.target.value < 0){
+    setPrice(0);
+  }else {
+    setPrice(parseInt(e.target.value));
+  }
+ }
+ const enableMint = async () => {
+  await contract.methods.enableMint().send({from: accounts[0]});
+ }
+ const stopMint = async () => {
+  await contract.methods.stopMint().send({from: accounts[0]});
+ }
   return (
     <>
-    <div id="App">
+    {isOwner ? 
+    <div>
+      Pannaux d'admin : <br />
+      <input onChange={handleSetURI} type="text" value={uri} placeholder="new URI" />
+      <button onClick={setBaseURI}>set new uri</button><br />
+      Current URI : {rrr}
+      <button onClick={getURI}>get URI</button><br />
+      <input onChange={handleChangePrice} type="number" value={price} placeholder="new price in wei" />
+      <button onClick={setBaseURI}>set new price in wei</button>   Check this website to convert eth in wei : https://eth-converter.com/ <br />
+      {isMintOn ? 
+      <>
+      <div>Turn mint off</div>
+      <button onClick={stopMint}>Off</button>
+      </>
+      :
+      <>
+      <div>Turn mint on</div>
+      <button onClick={enableMint}>ON</button>
+      </>
+      }
+    </div>
+     :
+    <div>
+      Le mint est {isMintOn ? "Live !": "en pause. Stay tuned !"}<br /><br />
+      Le prix du mint est {mintPrice/1000000000000000000} eth<br /><br />
       <select onChange={handleNumberChange} value={number} id="mint">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
       </select>
-      <button onClick={mint}>Mint</button>
-      <button onClick={_mint}>_mint</button>
-      <div>My NFT</div>
-      <div>{myNft}</div>
-      <button onClick={balanceOf}>Check</button>
+      <button onClick={mint}>Mint</button><br /><br />
+      {/* <div>My NFT</div>
+      <div>{myNft}</div><br />
+      <button onClick={balanceOf}>Check</button> */}
     </div>
+     }
     </>
   );
 }

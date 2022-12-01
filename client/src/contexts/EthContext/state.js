@@ -7,7 +7,10 @@ const initialState = {
   web3: null,
   accounts: null,
   networkID: null,
-  contract: null
+  contract: null,
+  isOwner: null,
+  isMintOn: null,
+  mintPrice: null
 };
 
 const reducer = (state, action) => {
