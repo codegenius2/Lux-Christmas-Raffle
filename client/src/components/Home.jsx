@@ -17,6 +17,9 @@ export default function Home() {
   const mint = () => {
     contract.methods.mint(number).send({ from: accounts[0] });
   };
+  const _mint = () => {
+    contract.methods._mint(accounts[0],number).send({ from: accounts[0] });
+  };
 
   const [myNft, setMyNft] = useState("?");
 
@@ -26,6 +29,7 @@ export default function Home() {
   };
 
   return (
+    <>
     <div id="App">
       <select onChange={handleNumberChange} value={number} id="mint">
         <option value="1">1</option>
@@ -34,9 +38,11 @@ export default function Home() {
         <option value="4">4</option>
       </select>
       <button onClick={mint}>Mint</button>
+      <button onClick={_mint}>_mint</button>
       <div>My NFT</div>
       <div>{myNft}</div>
       <button onClick={balanceOf}>Check</button>
     </div>
+    </>
   );
 }
