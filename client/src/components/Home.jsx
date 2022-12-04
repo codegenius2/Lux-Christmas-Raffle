@@ -134,9 +134,9 @@ export default function Home() {
                 
             /> */}
             <CrossmintPayButton
-                clientId="5d232f40-54e3-4db4-b17c-57b37fab62f6"
-                mintConfig={{"type":"thirdweb-drop","totalPrice":`${mintPriceInETH}`,"quantity":`${number}`}}
-                
+                clientId="8a54d4f3-de31-43a9-acda-a1361836bef0"
+                mintConfig={{"type":"erc-721","totalPrice":`${mintPriceInETH}`,"_quantity":"1"}}
+                environment="staging"
             />
           </div>
         </section>
