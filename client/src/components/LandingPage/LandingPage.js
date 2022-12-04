@@ -8,7 +8,6 @@ function LandingPage() {
       <div className="textbloc">
         <div className="christmas-raffle">Christman Collectible Raffle</div>
         <div className="mint-test">Mint is LIVE</div>
-        
       </div>
     </section>
   );
