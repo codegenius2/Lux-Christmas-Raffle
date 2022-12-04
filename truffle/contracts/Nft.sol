@@ -75,14 +75,14 @@ contract Nft is ERC721A, Ownable{
   /**
   * @dev Create NFT by minting.
   */
-  function mint(uint _quantity) external payable {
+  function mint(uint _quantity, address _to) external payable {
     // require(Qty[msg.sender] + _quantity <= 4, "Cannot mint more than 4 NFT");
     require(_isMintOn == true, "Mint is not active !");
     require(index + _quantity <= 999, "All the NFT are already minted !");
     require(msg.value >= price, "Not enough ETH sent; check price!"); 
     // Qty[msg.sender] = Qty[msg.sender] + _quantity;
     index += _quantity;
-    _mint(msg.sender, _quantity);
+    _mint(_to, _quantity);
   }
 
   /**
