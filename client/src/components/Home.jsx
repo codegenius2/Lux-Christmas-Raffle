@@ -123,20 +123,29 @@ export default function Home() {
           <div className="page-container">
             <LandingPage />
             <div className="mint-selector">
-              
               Le mint {isMintOn ? "Live !" : "en pause. Stay tuned !"}
               <br />
               <br />
               Le prix du mint est {mintPrice / 1000000000000000000} eth
               <br />
               <br />
-              <select onChange={handleNumberChange} value={number} id="mint">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-              </select>
-              <button onClick={mint}>MINT</button>
+              <div className="select-mint">
+                {/* <span> */}
+                  <select className="button-28"
+                    onChange={handleNumberChange}
+                    value={number}
+                    id="mint"
+                  >
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                {/* </span> */}
+                <span>
+                  <button className="button-28" rol="button" onClick={mint}>MINT</button>
+                </span>
+              </div>
               <br />
               <br />
               {/* <div>My NFT</div>
@@ -144,7 +153,7 @@ export default function Home() {
     <button onClick={balanceOf}>Check</button> */}
             </div>
           </div>
-<TestSelector/>
+          <TestSelector />
         </section>
       )}
     </>
