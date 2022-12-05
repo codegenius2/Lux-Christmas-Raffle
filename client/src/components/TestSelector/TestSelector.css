@@ -1,4 +1,10 @@
 
+footer {
+  background-color: #bbaFA9;
+}
+
+
+/* 
 .test-selector-container {
     background:#2d2d2d;
     display:flex;
@@ -84,4 +90,4 @@
     width: 40px;
     content: '';
     background:#666;
-  }
+  } */

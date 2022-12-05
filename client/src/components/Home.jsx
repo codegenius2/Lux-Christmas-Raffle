@@ -153,9 +153,9 @@ export default function Home() {
     <button onClick={balanceOf}>Check</button> */}
             </div>
           </div>
-          <TestSelector />
         </section>
       )}
+      <TestSelector />
     </>
   );
 }
