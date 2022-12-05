@@ -5,6 +5,7 @@ import React from "react";
 import Navbar from "./Navbar/Navbar";
 import LandingPage from "./LandingPage/LandingPage";
 import TestSelector from "./TestSelector/TestSelector";
+// import TestSelector2 from "./TestSelector2/TestSelector2";
 
 export default function Home() {
   const {
@@ -156,6 +157,7 @@ export default function Home() {
         </section>
       )}
       <TestSelector />
+      {/* <TestSelector2/> */}
     </>
   );
 }
