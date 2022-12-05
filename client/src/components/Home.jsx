@@ -4,6 +4,7 @@ import "./Home.css";
 import React from "react";
 import Navbar from "./Navbar/Navbar";
 import LandingPage from "./LandingPage/LandingPage";
+import TestSelector from "./TestSelector/TestSelector";
 
 export default function Home() {
   const {
@@ -135,7 +136,7 @@ export default function Home() {
                 <option value="3">3</option>
                 <option value="4">4</option>
               </select>
-              <button onClick={mint}>Mint</button>
+              <button onClick={mint}>MINT</button>
               <br />
               <br />
               {/* <div>My NFT</div>
@@ -143,6 +144,7 @@ export default function Home() {
     <button onClick={balanceOf}>Check</button> */}
             </div>
           </div>
+<TestSelector/>
         </section>
       )}
     </>

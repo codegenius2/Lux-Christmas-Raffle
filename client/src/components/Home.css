@@ -4,7 +4,7 @@
     align-items: center;
     height: 90px;
     width: 100vw;
-    background-color: yellow ;
+    /* background-color: yellow ; */
     /* color:  blue; */
     text-align: center;
 }
@@ -15,5 +15,5 @@
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    background-color: red;
+    /* background-color: red; */
 }
