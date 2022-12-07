@@ -1,5 +1,6 @@
 import React from "react";
 import "./TestSelector.css";
+import { FaDiscord } from "react-icons/fa";
 
 function TestSelector() {
   return (
@@ -14,8 +15,10 @@ function TestSelector() {
           <div>
             <span className="text-footer-colonne1">
               <a href="https://discord.com/invite/YbnVGG3JdP">
-                Rejoindre notre Discord
+                <FaDiscord/>
               </a>
+                
+                <i class="fa-brands fa-discord"></i>
             </span>
           </div>
           <span className="text-footer-colonne1">
