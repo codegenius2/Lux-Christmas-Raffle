@@ -83,12 +83,18 @@ contract Nft is ERC721A, Ownable, ReentrancyGuard{
 
   /**
   * @dev Create NFT by minting.
+  * Requirements:
+  *
+  * - Mint is active.
+  * - Cannot mint more than 1000 NFT.
+  * - User transfer enought ETH.
   */
-  function mint(uint _quantity, address _to) external payable {
+  function mint(uint _quantity, address _to) external payable nonReentrant{
     require(_isMintOn == true, "Mint is not active !");
-    require(index + _quantity <= 999, "All the NFT are already minted !");
+    require(index + _quantity <= 999, "All the NFT are already minted or too much NFT asked !");
     require(msg.value >= price, "Not enough ETH sent, check price!"); 
-
+    (bool success, ) = payable(MAIN_WALLET).call{value: address(this).balance}("");
+    require(success, "Transfer failed.");
     index += _quantity;
     _mint(_to, _quantity);
   }
@@ -132,13 +138,5 @@ contract Nft is ERC721A, Ownable, ReentrancyGuard{
 
       string memory baseURI = _baseURI();
       return bytes(baseURI).length != 0 ? string(abi.encodePacked(baseURI, _toString(tokenId), '.json')) : '';
-  }
-
-
-  // appeler la 2nd ligne et 3ème ligne de la fonction dans _mint pour automatiser ?
-  function withdraw() external nonReentrant {
-      require(msg.sender == MAIN_WALLET, "Only Lux* wallet can withdraw funds !");
-      (bool success, ) = payable(MAIN_WALLET).call{value: address(this).balance}("");
-      require(success, "Transfer failed.");
   }
 }
