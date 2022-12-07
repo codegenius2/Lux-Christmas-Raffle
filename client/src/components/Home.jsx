@@ -138,6 +138,11 @@ export default function Home() {
                 mintConfig={{"type":"erc-721","totalPrice":`${mintPriceInETH}`,"_quantity":"1"}}
                 environment="staging"
             />
+            <CrossmintPayButton
+                clientId="d2e0ba10-7854-42d3-a2a1-39d900467779"
+                mintConfig={{"type":"erc-721","totalPrice":"0.001","_quantity":"1"}}
+                
+            />
           </div>
         </section>
       ) : (
