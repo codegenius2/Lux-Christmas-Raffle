@@ -1,102 +1,116 @@
-.mint-selector {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    height: 90px;
-    width: 100vw;
-    /* background-color: yellow ; */
-    /* color:  blue; */
-    text-align: center;
+/* max-width 320 */
+
+@font-face {
+  font-family: Imported;
+  src: url("../fonts/KingsCaslon-Italic.ttf");
+}
+
+.page-mint{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
 }
 .page-container {
-    height: 100vh;
-    max-width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
-    /* background-color: red; */
+  height: 55vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
 }
 
-
-.select-mint {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 5vh;
-    /* background-color: red; */
+.container-bis{
+  /* background-color: green; */
+  height: 80%; 
+  /* A modifier pour espace entre Chrstmas et l'interface*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.page-container span {
-    padding: 0em 0.5em;
-    /* background-color: blue; */
-}
-button {
-    /* -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none; */
-    background-color: #e6dcd6;
-    border-radius: 6px;
-    box-shadow: none;
-    outline: 0;
-    background-image: none;
-    padding: 0.5em;
+.landing-page-container{
+  /* background-color: orange; */
+  height: 10%;
+  font-size: 1.8em;
+  font-family: Imported;
 }
 
-/* --------------------------- */
-
-/* <!-- HTML !-->
-<button class="button-28" role="button">Button 28</button> */
-
-/* CSS */
-
-
-.button-28 {
-  appearance: none;
-  background-color: transparent;
-  border: 2px solid #1A1A1A;
-  border-radius: 15px;
-  box-sizing: border-box;
-  color: #3B3B3B;
-  cursor: pointer;
-  display: inline-block;
-  /* font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; */
-  font-size: 1em;
-  font-weight: 600;
-  line-height: normal;
-  margin: 0;
-  /* min-height: 60px; */
-  min-width: 0;
-  outline: none;
-  /* padding: 16px 24px; */
+.textbloc {
+  display: block;
+  justify-content: center;
+  height: auto;
+  width: 100vw;
   text-align: center;
-  text-decoration: none;
-  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: 100%;
-  will-change: transform;
 }
 
-select {
-    width: 10% !important;
-    padding: 0.4em 1em !important;
+.christmas-raffle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  width: 100vw;
 }
 
-.button-28:disabled {
-  pointer-events: none;
+.mintpage-container{
+  /* background-color: yellow; */
+  height: 70%;
+  display: flex;
+  align-items: center;
+  
 }
 
-.button-28:hover {
-  color: #fff;
-  background-color: #1A1A1A;
-  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-  transform: translateY(-2px);
+/* IPHONE XR */
+
+@media (min-width:414px) {
+  .landing-page-container{
+    font-size: 2.2em;
+  }
 }
 
-.button-28:active {
-  box-shadow: none;
-  transform: translateY(0);
+/* IPHONE 12 PRO */
+
+@media (min-width:390px) {
+  .landing-page-container{
+    font-size: 2.2em;
+  }
+}
+
+/* IPAD MINI */
+
+@media (min-width: 768px) {
+  .landing-page-container {
+    font-size: 3.8em;
+  }
+
+}
+/* IPAD AIR */
+
+@media (min-width:820px) {
+  .landing-page-container{
+    font-size:3.5em;
+  }
+}
+
+/* PC */
+
+@media (min-width:1200px) {
+  .landing-page-container{
+    font-size: 5em;
+  }
+}
+
+@media (min-width:1800px) {
+  .landing-page-container{
+    font-size: 7em;
+  }
+}
+
+@media (min-width:1920px) {
+  .landing-page-container{
+    font-size: 9em;
+  }
 }

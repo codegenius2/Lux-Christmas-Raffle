@@ -1,0 +1,153 @@
+/* max width 320 */
+.mint-selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70%;
+    width: 100vw;
+    text-align: center;
+    /* background-color: red; */
+    flex-direction: column;
+  }
+  .text-mint-container{
+    height: 20%;
+    line-height: 130%;
+    /* background-color: green; */
+  }
+  .select-mint {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 100vw; */
+    width: 35%;
+    height: 50%;
+    /* background-color: blue; */
+  }
+  
+  .button-28 {
+    background-color: #e6dcd6;
+    background-color: transparent;
+    border-radius: 6px;
+    box-shadow: none;
+    outline: 0;
+    background-image: none;
+    padding: 0.5em;
+    appearance: none;
+  
+    border: 2px solid #1A1A1A;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-width: 0;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+    will-change: transform;
+  }
+  .button-28:disabled {
+  pointer-events: none;
+  }
+  
+  .button-28:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+  }
+  
+  .button-28:active {
+  box-shadow: none;
+  transform: translateY(0);
+  }
+  
+  select {
+    width: 30% !important;
+    /* padding: 0.4em 1em !important; */
+  }
+
+  /* IPHONE XR
+  */
+@media (min-width: 414px) {
+  .text-mint-container{
+    font-size: 1.3em;
+    
+  }
+  .button-28 {
+    padding: 0.8em;
+  }
+}
+
+/* IAD AIR */
+
+@media (min-width:820px) {
+  .text-mint-container{
+    font-size: 1.8em;
+  }
+  .button-28 {
+    font-size: 1.5em;
+  }
+  .select-mint{
+    width: 25%;
+  }
+}
+
+
+/* IPAD MINI */
+
+@media (min-width: 768px) {
+  .text-mint-container{
+    font-size: 1.8em;
+  }
+  .button-28{
+    font-size: 1.7em;
+  }
+  .select-mint{
+    width: 30%;
+  }
+}
+
+/* PC */
+
+@media (min-width: 1024px) {
+ .text-mint-container{
+  font-size: 2em;
+ }
+}
+
+@media (min-width: 1200px) {
+  .text-mint-container{
+    font-size: 2.5em;
+  }
+  .button-28{
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 1600px) {
+  .text-mint-container{
+    font-size: 3.3em;
+  }
+  .button-28{
+    font-size: 3em;
+  }
+}
+
+@media (min-width: 1920px) {
+  .text-mint-container{
+    font-size: 4.2em;
+  }
+  .button-28{
+    font-size: 3.5em;
+  }
+}

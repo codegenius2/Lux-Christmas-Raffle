@@ -1,0 +1,148 @@
+/* max width 320 */
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 30vh;
+  /* background-color: blue; */
+}
+
+.footer-mint {
+  display: flex;
+  justify-content: space-evenly;
+  width: 70%;
+  height: 80%;
+  /* background-color: red; */
+  flex-direction: column;
+}
+
+.footer-mint > span {
+  text-align: center;
+}
+
+.icons-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.icons-socials {
+  height: 2em;
+  width: 2em;
+  color: #bbafa9;
+}
+
+.copyright-container {
+  height: 40%;
+  font-size: 0.6em;
+  display: flex;
+  align-items: flex-end;
+  /* background-color: red; */
+}
+
+.copyright-text {
+  /* background-color: green; */
+  height: 40%;
+}
+
+/* IPHONE XR */
+
+@media (min-width: 414px) {
+  .footer-mint > span {
+    font-size: 1.3em;
+  }
+  .copyright-text {
+    font-size: 1.6em;
+  }
+}
+
+/* IPHONE 12 PRO */
+@media (min-width: 390px) {
+
+  .footer-mint > span {
+    font-size: 1.2em;
+  }  
+  .copyright-text {
+    font-size: 1.4em;
+  }
+}
+
+/* IPAD MINI  */
+
+@media (min-width:768px) {
+    .footer-mint > span {
+        font-size: 1.7em
+    }
+    .copyright-text{
+        font-size: 2em;
+    }
+    .icons-socials {
+        height: 3em;
+        width: 3em;
+      }
+}
+/* IPAD AIR */
+
+@media (min-width:820px) {
+    .footer-mint > span {
+        font-size: 1.8em;
+      }  
+
+      .copyright-text {
+        font-size: 1.8em;
+      }
+      .icons-socials {
+        height: 3em;
+        width: 3em;
+      }
+}
+
+/* PC  */
+
+@media (min-width:1024px) {
+    .footer-mint > span {
+        font-size: 2.0em;
+    }
+    .icons-socials{
+        height: 4em;
+        width: 4em;
+    }
+    .copyright-text {
+        font-size: 2.4em;
+    }
+}
+
+@media (min-width:1200px) {
+    .footer-mint > span {
+        font-size: 2.4em;
+    }
+    .icons-socials {
+        height: 5em;
+        width: 5em;
+    }
+}
+
+@media (min-width:1600px) {
+    .footer-mint > span {
+        font-size: 3em;
+    }
+    .copyright-text{
+        font-size: 3em;
+    }
+}
+
+@media (min-width:1800px) {
+    .footer-mint > span {
+        font-size: 3.5em;
+    }
+    .icons-socials{
+        height: 7em;
+        width: 7em;
+    }
+    .copyright-text{
+        font-size: 3.3em;
+    }
+}
+
+
