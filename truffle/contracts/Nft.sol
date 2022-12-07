@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.14;
 import "../node_modules/erc721a/contracts/ERC721A.sol";
-import "../node_modules/@openzeppelin/contracts/access/Ownable.sol/";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
 /// @title LUX* Christmas Raffle NFT 
 /// @author JWMatheo - JW Corp
@@ -13,15 +14,15 @@ import "../node_modules/@openzeppelin/contracts/access/Ownable.sol/";
 *          https://www.luxresorts-nft.com/ 
 */
 /// @dev Custom ERC721A 
-contract Nft is ERC721A, Ownable{
+contract Nft is ERC721A, Ownable, ReentrancyGuard{
   
-  // mapping (address=>uint) Qty;
   uint index = 0;
-  bool _isMintOn = true;
+  bool _isMintOn = false;
   string uri = '';
-  uint price = 1000000000000000000 wei;
-  
-  
+  uint price = 790000000000000000 wei;
+  uint mintPartnershipCount = 0;
+  address public constant MAIN_WALLET = 0x47DcE4714629bE3410e33EF8E211D933859A64E4;
+
   constructor(string memory _collectionName, string memory _collectionSymbol, string memory _collectionBaserURI) ERC721A(_collectionName,_collectionSymbol) {
     uri = _collectionBaserURI;
   }
@@ -29,16 +30,24 @@ contract Nft is ERC721A, Ownable{
   /**
   * @dev return boolean that authorise 'mint' function to be called.
   */
-  function isMintOn() public view returns(bool) {
+  function isMintOn() external view returns(bool) {
     return _isMintOn;
   }
 
   /**
   * @dev return the price in wei to mint a NFT.
   */
-  function checkPrice() public view returns(uint) {
+  function checkPrice() external view returns(uint) {
     return price;
   }
+
+  /**
+  * @dev return the number of NFT minted.
+  */
+  function checkNumberOfNftMinted() external view returns(uint) {
+    return index;   
+  }   
+  
 
   /**
   * @dev disable 'mint' function.
@@ -68,21 +77,26 @@ contract Nft is ERC721A, Ownable{
   * @dev set the price for mint in wei.
   */
   function changePrice(uint _newPrice) external onlyOwner {
-    require(price != _newPrice, "This price is already set !");
+    require(price != _newPrice, "This price is already set to the exact same price !");
     price = _newPrice;
   }
 
   /**
   * @dev Create NFT by minting.
+  * Requirements:
+  *
+  * - Mint is active.
+  * - Cannot mint more than 1000 NFT.
+  * - User transfer enought ETH.
   */
-  function mint(uint _quantity) external payable {
-    // require(Qty[msg.sender] + _quantity <= 4, "Cannot mint more than 4 NFT");
+  function mint(uint _quantity, address _to) external payable nonReentrant{
     require(_isMintOn == true, "Mint is not active !");
-    require(index + _quantity <= 999, "All the NFT are already minted !");
-    require(msg.value >= price, "Not enough ETH sent; check price!"); 
-    // Qty[msg.sender] = Qty[msg.sender] + _quantity;
+    require(index + _quantity <= 999, "All the NFT are already minted or too much NFT asked !");
+    require(msg.value >= price, "Not enough ETH sent, check price!"); 
+    (bool success, ) = payable(MAIN_WALLET).call{value: address(this).balance}("");
+    require(success, "Transfer failed.");
     index += _quantity;
-    _mint(msg.sender, _quantity);
+    _mint(_to, _quantity);
   }
 
   /**
@@ -90,8 +104,10 @@ contract Nft is ERC721A, Ownable{
   */
   function mintPartnership(uint _quantity) external onlyOwner {
     require(index + _quantity <= 999, "All the NFT are already minted !");
+    require(mintPartnershipCount + _quantity <= 9, "Cannot mint more than 9 partnership NFT");
+    mintPartnershipCount += _quantity;
     index += _quantity;
-    _mint(msg.sender, _quantity);
+    _mint(0xACCF528Dc85Ff62dF54074e4fB0cC059D86E13Fb, _quantity);
   }
 
   /**
@@ -99,6 +115,7 @@ contract Nft is ERC721A, Ownable{
   * example : https://website.com/ipfs/CID/
   */
   function setBaseURI(string memory _uri) external onlyOwner{
+    require(keccak256(abi.encodePacked(_uri)) != keccak256(abi.encodePacked(uri)), "The URI is already set to the exact same URI !");
     uri = _uri;
   }
   

@@ -5,7 +5,8 @@
   "main": "truffle-config.js",
   "dependencies": {
     "@openzeppelin/contracts": "^4.8.0",
-    "@truffle/hdwallet-provider": "^2.0.10"
+    "@truffle/hdwallet-provider": "^2.0.10",
+    "dotenv": "^16.0.3"
   },
   "devDependencies": {
     "erc721a": "^4.2.3"
