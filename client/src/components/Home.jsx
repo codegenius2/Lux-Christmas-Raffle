@@ -66,17 +66,17 @@ export default function Home() {
   };
 
   const mintPriceInETH = mintPrice / 1000000000000000000;
-  const isOwner2 = false;
   const [trackNumber, setTrackNumber] = useState("Please check");
-
+  
   const checkNumberOfNftMinted = async () => {
     const value = await contract.methods.checkNumberOfNftMinted().call({from: accounts[0]});
     setTrackNumber(value);
   }
+  
+  
+  const isOwner2 = false;
 
   
-
-  // const isOwner2 = false;
   return (
     <>
       <section className="page-mint">
@@ -87,7 +87,7 @@ export default function Home() {
               Christmas Collectible Raffle
             </section>
             <div className="mintpage-container">
-              {isOwner ? (
+              {isOwner2 ? (
                 <AdminPage
                   handleSetURI={handleSetURI}
                   uri={uri}

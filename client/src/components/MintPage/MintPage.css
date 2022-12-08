@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70%;
+    height: 95%;
     width: 100vw;
     text-align: center;
     /* background-color: red; */
@@ -76,6 +76,10 @@
     /* padding: 0.4em 1em !important; */
   }
 
+  .crossmint-button{
+    font-size: 0.7em;
+  }
+
   /* IPHONE XR
   */
 @media (min-width: 414px) {
@@ -86,6 +90,9 @@
   .button-28 {
     padding: 0.8em;
   }
+  .crossmint-button{
+    font-size: 0.9em;
+  }
 }
 
 /* IAD AIR */
@@ -95,10 +102,13 @@
     font-size: 1.8em;
   }
   .button-28 {
-    font-size: 1.5em;
+    font-size: 1.1em;
   }
   .select-mint{
     width: 25%;
+  }
+  .crossmint-button{
+    font-size: 1.1em;
   }
 }
 
@@ -130,6 +140,9 @@
  .select-mint{
   width: 18%;
  }
+ .crossmint-button{
+  font-size: 1em;
+ }
 }
 
 @media (min-width: 1200px) {
@@ -155,9 +168,25 @@
 
 @media (min-width: 1920px) {
   .text-mint-container{
-    font-size: 4.2em;
+    font-size:1.7em;
   }
   .button-28{
-    font-size: 3.5em;
+    font-size: 1.5em;
   }
+  .crossmint-button{
+    font-size: 1.6em;
+  }
+
+  @media (min-width:2560px) {
+    .text-mint-container{
+      font-size: 1.9em;
+    }
+    .button-28{
+      font-size: 1.8em;
+    }
+    .crossmint-button{
+      font-size: 2em;
+    }
+  }
+
 }

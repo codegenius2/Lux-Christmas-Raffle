@@ -14,7 +14,7 @@ const MintPage = ({
     <>
       <div className="mint-selector">
         <div className="text-mint-container">
-          <p>Le mint {isMintOn ? "Live !" : "est en pause. Stay tuned !"}</p>
+          <p>Le mint {isMintOn ? "est live !" : "est en pause. Stay tuned !"}</p>
           <p>Le prix du mint est {mintPrice / 1000000000000000000} ETH</p>
         </div>
         <div className="select-mint">
@@ -36,6 +36,7 @@ const MintPage = ({
             </span>
         </div>
         <CrossmintPayButton
+        className="crossmint-button"
           clientId="8a54d4f3-de31-43a9-acda-a1361836bef0"
           mintConfig={{
             type: "erc-721",

@@ -14,16 +14,16 @@ function Footer() {
       <section className="footer-mint">
         <span>Rejoignez nous sur nos réseaux !</span>
         <div className="icons-container">
-          <a href="mailto:luxresort@metalyde.com">
+          <a href="mailto:luxresort@metalyde.com"> 
             <FontAwesomeIcon icon={faEnvelope} className="icons-socials" />
           </a>
-          <a href="https://discord.com/invite/YbnVGG3JdP">
+          <a href="https://discord.com/invite/YbnVGG3JdP" target={"_blank"}>
             <FontAwesomeIcon icon={faDiscord} className="icons-socials" />
           </a>
-          <a href="https://www.instagram.com/luxresorts/">
+          <a href="https://www.instagram.com/luxresorts/" target={"_blank"}>
             <FontAwesomeIcon icon={faInstagram} className="icons-socials" />
           </a>
-          <a href="https://www.facebook.com/luxresorts/">
+          <a href="https://www.facebook.com/luxresorts/" target={"_blank"}>
             <FontAwesomeIcon icon={faFacebook} className="icons-socials" />
           </a>
         </div>

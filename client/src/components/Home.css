@@ -105,12 +105,13 @@
 
 @media (min-width:1800px) {
   .landing-page-container{
-    font-size: 7em;
+    font-size: 6em;
   }
 }
 
 @media (min-width:1920px) {
   .landing-page-container{
-    font-size: 9em;
+    font-size: 7em;
   }
+
 }

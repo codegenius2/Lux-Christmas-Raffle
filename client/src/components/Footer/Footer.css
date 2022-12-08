@@ -32,6 +32,9 @@ footer {
   width: 2em;
   color: #bbafa9;
 }
+.icons-socials:hover{
+    color: black;
+}
 
 .copyright-container {
   height: 40%;
@@ -146,8 +149,8 @@ footer {
         font-size: 1.6em;
     }
     .icons-socials{
-        height: 4.5em;
-        width: 4.5em;
+        height: 3.5em;
+        width: 3.5em;
     }
     .footer-mint{
         width: 45%;
@@ -157,4 +160,9 @@ footer {
     }
 }
 
+@media (min-width:2560px) {
+    .copyright-text{
+        font-size: 1.8em;
+    }
+}
 
