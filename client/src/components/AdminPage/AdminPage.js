@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import "./AdminPage.css";
 
 function AdminPage({
@@ -27,7 +26,6 @@ function AdminPage({
   const handleCheckPrice = async () => {
     await checkPrice();
     count = 1;
-    console.log(count);
   };
 
   return (
