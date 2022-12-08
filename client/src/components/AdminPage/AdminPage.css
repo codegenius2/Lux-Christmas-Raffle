@@ -1,6 +1,26 @@
-
-
-
+.admin-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: antiquewhite;
+  width: 100vw;
+  height: 120%;
+}
+.admin-section > h2 {
+  font-weight: bolder;
+  font-size: large;
+}
+.admin-container {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 80%;
+height: 90%;
+background-color: red;
+}
+.admin-wrap{
+  
+}
 
 
 
