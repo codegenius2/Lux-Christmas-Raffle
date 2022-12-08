@@ -14,14 +14,31 @@
 display: flex;
 justify-content: center;
 align-items: center;
-width: 80%;
+width: 100%;
 height: 90%;
 background-color: red;
 }
 .admin-wrap{
-  
+  background-color: blue;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
 }
-
+.admin-content-1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: green;
+}
+.admin-content-1-state{
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  height: 10%;
+}
 
 
 

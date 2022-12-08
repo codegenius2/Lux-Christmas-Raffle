@@ -27,7 +27,7 @@ function AdminPage({
         <div className="admin-container">
           <div className="admin-wrap">
             <div className="admin-content-1">
-              <div>
+              <div className="admin-content-1-state">
                 <span>Le mint est en cours ! </span>
                 <button>Stop mint</button>
               </div>
