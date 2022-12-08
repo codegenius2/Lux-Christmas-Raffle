@@ -30,8 +30,8 @@ footer {
   width: 2em;
   color: #bbafa9;
 }
-.icons-socials:hover{
-    color: black;
+.icons-socials:hover {
+  color: black;
 }
 
 .copyright-container {
@@ -58,10 +58,9 @@ footer {
 
 /* IPHONE 12 PRO */
 @media (min-width: 390px) {
-
   .footer-mint > span {
     font-size: 1.2em;
-  }  
+  }
   .copyright-text {
     font-size: 1.4em;
   }
@@ -69,79 +68,95 @@ footer {
 
 /* IPAD MINI  */
 
-@media (min-width:768px) {
-    .footer-mint > span {
-        font-size: 1.7em
-    }
-    .copyright-text{
-        font-size: 2em;
-    }
-    .icons-socials {
-        height: 3em;
-        width: 3em;
-      }
+@media (min-width: 768px) {
+  .footer-mint > span {
+    font-size: 1.7em;
+  }
+  .copyright-text {
+    font-size: 2em;
+  }
+  .icons-socials {
+    height: 3em;
+    width: 3em;
+  }
 }
 /* IPAD AIR */
 
-@media (min-width:820px) {
-    .footer-mint > span {
-        font-size: 1.8em;
-      }  
+@media (min-width: 820px) {
+  .footer-mint > span {
+    font-size: 1.8em;
+  }
 
-      .copyright-text {
-        font-size: 1.8em;
-      }
-      .icons-socials {
-        height: 3em;
-        width: 3em;
-      }
+  .copyright-text {
+    font-size: 1.8em;
+  }
+  .icons-socials {
+    height: 3em;
+    width: 3em;
+  }
 }
 
 /* PC  */
 
-@media (min-width:1024px) {
-    .footer-mint > span {
-        font-size: 1.2em;
-    }
-    .icons-socials{
-        height: 3em;
-        width: 3em;
-    }
-    .copyright-text {
-        font-size: 1.2em;
-    }
+@media (min-width: 1024px) {
+  .footer-mint > span {
+    font-size: 1.2em;
+  }
+  .icons-socials {
+    height: 3em;
+    width: 3em;
+  }
+  .copyright-text {
+    font-size: 1.2em;
+  }
+}
+@media (min-width: 1000px) and (min-height: 700px) and (max-width: 1800px) and (max-height: 1000px) {
+  footer {
+    height: 20vh;
+  }
+  .footer-mint {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    height: 100%;
+    flex-direction: column;
+  }
+  .icons-socials {
+    height: 2.5em !important;
+    width: 2.5em !important;
+  }
 }
 
-@media (min-width:1200px) {
-    .footer-mint > span {
-        font-size: 1.4em;
-    }
-    .icons-socials {
-        height: 4em;
-        width: 4em;
-    }
-    .copyright-text{
-        font-size: 1.4em;
-    }
+@media (min-width: 1200px) {
+  .footer-mint > span {
+    font-size: 1.4em;
+  }
+  .icons-socials {
+    height: 4em;
+    width: 4em;
+  }
+  .copyright-text {
+    font-size: 1.4em;
+  }
 }
 
-@media (min-width:1600px) {
-    .footer-mint > span {
-        font-size: 1.5em;
-    }
-    .icons-socials{
-     font-size: 1.1em;   
-    }
-    .footer-mint{
-        width: 40%;
-    }
-    .copyright-text{
-        font-size: 1.5em;
-    }
+@media (min-width: 1600px) {
+  .footer-mint > span {
+    font-size: 1.5em;
+  }
+  .icons-socials {
+    font-size: 1.1em;
+  }
+  .footer-mint {
+    width: 40%;
+  }
+  .copyright-text {
+    font-size: 1.5em;
+  }
 }
 
-@media (min-width:1800px) {
-  footer{
+@media (min-width: 1800px) {
+  footer {
     height: 20vh;
   }
   .footer-mint {
@@ -151,41 +166,40 @@ footer {
     height: 80%;
     flex-direction: column;
   }
-    .footer-mint > span {
-        font-size: 1.6em;
-    }
-    .icons-socials{
-        height: 3.5em;
-        width: 3.5em;
-    }
-    .footer-mint{
-        width: 45%;
-    }
-    .copyright-text{
-        font-size: 1.5em;
-    }
+  .footer-mint > span {
+    font-size: 1.6em;
+  }
+  .icons-socials {
+    height: 3.5em;
+    width: 3.5em;
+  }
+  .footer-mint {
+    width: 45%;
+  }
+  .copyright-text {
+    font-size: 1.5em;
+  }
 }
 
-@media (min-width:2560px) {
-    footer{
-      height: 22vh;
-      justify-content: space-between;
-    }
-    .footer-mint {
-      display: flex;
-      justify-content: space-between;
-      width: 30%;
-      height: 55%;
-      flex-direction: column;
-    }
-    .copyright-container {
-      height: 40%;
-      font-size: 0.6em;
-      display: flex;
-      align-items: flex-end;
-    }
-    .copyright-text{
-        font-size: 1.8em;
-    }
+@media (min-width: 2560px) {
+  footer {
+    height: 22vh;
+    justify-content: space-between;
+  }
+  .footer-mint {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    height: 55%;
+    flex-direction: column;
+  }
+  .copyright-container {
+    height: 40%;
+    font-size: 0.6em;
+    display: flex;
+    align-items: flex-end;
+  }
+  .copyright-text {
+    font-size: 1.8em;
+  }
 }
-

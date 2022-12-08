@@ -163,6 +163,19 @@
   }
 }
 
+@media (min-width:1000px) and (min-height:700px) and (max-width:1800px) and (max-height:1000px)
+{
+  body{
+
+    /* background-color: red; */
+  }
+
+  .mint-selector{
+    /* background-color: green; */
+    height: 100%;
+  }
+}
+
 @media (min-width: 1600px) {
   .text-mint-container{
     font-size: 1.7em;

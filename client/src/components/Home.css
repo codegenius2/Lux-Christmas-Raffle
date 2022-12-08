@@ -92,6 +92,12 @@
 
 /* PC */
 
+@media (min-width:1000px) and (min-height:700px) and (max-width:1800px) and (max-height:1000px){
+  .page-container{
+    height: 65vh;
+  }
+}
+
 @media (min-width:1200px) {
   .landing-page-container{
     font-size: 5em;
