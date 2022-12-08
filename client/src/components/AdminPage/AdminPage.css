@@ -1,5 +1,22 @@
-.admin-page-container{
-    /* background-color: red; */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .admin-page-container{
     height: 50%;
     display: flex;
     justify-content: space-between;
@@ -9,7 +26,6 @@
     width: 80vw;
     max-width: 80vw;
     text-align: center;
-    /* background-color: red; */
     flex-direction: column;
     border: 2px solid #1a1a1a;
     border-radius: 6px;
@@ -29,7 +45,6 @@
     border: 1px solid #1a1a1a;
     border-radius: 30px;
     padding: 1.5em;
-    /* background-color: blue; */
 }
 .admin-button-onoff {
   background-color: #e6dcd6;
@@ -38,7 +53,6 @@
   box-shadow: none;
   outline: 0;
   background-image: none;
-  /* padding: 0.5em; */
   appearance: none;
 
   border: 2px solid #1a1a1a;
@@ -59,7 +73,6 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  /* width: 100%; */
   will-change: transform;
 }
 
@@ -79,9 +92,6 @@
 }
 
 .admin-mint-price{
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* background-color: green; */
     border: 2px solid #1a1a1a;
     border-radius: 6px;
     padding: 1.5em;
@@ -121,6 +131,5 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  /* width: 100%; */
   will-change: transform;
-}
+} */
