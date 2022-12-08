@@ -6,7 +6,6 @@ import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
 import MintPage from "./MintPage/MintPage";
 import AdminPage from "./AdminPage/AdminPage";
-import { CrossmintPayButton } from "@crossmint/client-sdk-react-ui";
 import web3 from "web3";
 
 export default function Home() {
@@ -21,7 +20,9 @@ export default function Home() {
   };
 
   const mint = () => {
-    contract.methods.mint(number, accounts[0]).send({ from: accounts[0], value: mintPrice });
+    contract.methods
+      .mint(number, accounts[0])
+      .send({ from: accounts[0], value: mintPrice });
   };
 
   const [uri, setURI] = useState();
@@ -52,7 +53,7 @@ export default function Home() {
   const changePrice = async () => {
     const newPrice = web3.utils.toBN(price);
     await contract.methods.changePrice(newPrice).send({ from: accounts[0] });
-  }
+  };
   const enableMint = async () => {
     await contract.methods.enableMint().send({ from: accounts[0] });
   };
@@ -64,9 +65,16 @@ export default function Home() {
     await contract.methods.mintPartnership(number).send({ from: accounts[0] });
   };
 
+  const [trackNumber, setTrackNumber] = useState("Please check");
 
-  const mintPriceInETH = mintPrice/1000000000000000000;
+  const checkNumberOfNftMinted = async () => {
+    const value = await contract.methods.checkNumberOfNftMinted().call({from: accounts[0]});
+    setTrackNumber(value);
+  }
 
+  const mintPriceInETH = mintPrice / 1000000000000000000;
+
+  // const isOwner2 = false;
   return (
     <>
       <section className="page-mint">
@@ -77,23 +85,25 @@ export default function Home() {
               Christmas Collectible Raffle
             </section>
             <div className="mintpage-container">
-              {isOwner2 ? (
+              {isOwner ? (
                 <AdminPage
-               
-                handleSetURI={handleSetURI}
-                uri={uri}
-                setBaseURI={setBaseURI}
-                rrr={rrr}
-                getURI={getURI}
-                handleChangePrice={handleChangePrice}
-                price={price}
-                isMintOn={isMintOn}
-                stopMint={stopMint}
-                enableMint={enableMint}
-                handleNumberChange={handleNumberChange}
-                number={number}
-                mintPartnership={mintPartnership}
-                
+                  handleSetURI={handleSetURI}
+                  uri={uri}
+                  setBaseURI={setBaseURI}
+                  rrr={rrr}
+                  getURI={getURI}
+                  handleChangePrice={handleChangePrice}
+                  price={price}
+                  isMintOn={isMintOn}
+                  stopMint={stopMint}
+                  enableMint={enableMint}
+                  handleNumberChange={handleNumberChange}
+                  number={number}
+                  mintPartnership={mintPartnership}
+                  changePrice={changePrice}
+                  mintPrice={mintPrice}
+                  checkNumberOfNftMinted={checkNumberOfNftMinted}
+                  trackNumber={trackNumber}
                 />
               ) : (
                 <MintPage
@@ -102,23 +112,14 @@ export default function Home() {
                   handleNumberChange={handleNumberChange}
                   number={number}
                   mint={mint}
+                  mintPriceInETH={mintPriceInETH}
                 />
               )}
             </div>
           </div>
         </div>
-          <Footer />
         
-        <CrossmintPayButton
-                clientId="8a54d4f3-de31-43a9-acda-a1361836bef0"
-                mintConfig={{"type":"erc-721","totalPrice":`${mintPriceInETH}`,"_quantity":"1"}}
-                environment="staging"
-            />
-            <CrossmintPayButton
-                clientId="d2e0ba10-7854-42d3-a2a1-39d900467779"
-                mintConfig={{"type":"erc-721","totalPrice":"0.001","_quantity":"1"}}
-                
-            />
+        <Footer />
       </section>
     </>
   );

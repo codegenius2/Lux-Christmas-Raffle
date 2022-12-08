@@ -1,5 +1,6 @@
 import React from "react";
 import "./MintPage.css";
+import { CrossmintPayButton } from "@crossmint/client-sdk-react-ui";
 
 const MintPage = ({
   isMintOn,
@@ -7,6 +8,7 @@ const MintPage = ({
   handleNumberChange,
   number,
   mint,
+  mintPriceInETH
 }) => {
   return (
     <>
@@ -33,7 +35,15 @@ const MintPage = ({
               </button>
             </span>
         </div>
-        je suis crossmint
+        <CrossmintPayButton
+          clientId="8a54d4f3-de31-43a9-acda-a1361836bef0"
+          mintConfig={{
+            type: "erc-721",
+            totalPrice: `${mintPriceInETH}`,
+            _quantity: "1",
+          }}
+          environment="staging"
+        />
       </div>
     </>
   );
