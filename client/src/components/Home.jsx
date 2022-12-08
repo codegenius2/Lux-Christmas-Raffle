@@ -1,5 +1,5 @@
 import useEth from "../contexts/EthContext/useEth";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./Home.css";
 import React from "react";
 import Navbar from "./Navbar/Navbar";
@@ -40,7 +40,7 @@ export default function Home() {
     const value = await contract.methods
       .tokenURI(0)
       .call({ from: accounts[0] });
-      setCurrentUri(value);
+    setCurrentUri(value);
   };
 
   const [price, setPrice] = useState();
@@ -68,24 +68,23 @@ export default function Home() {
 
   const mintPriceInETH = mintPrice / 1000000000000000000;
   const [trackNumber, setTrackNumber] = useState("?");
-  
+
   const checkNumberOfNftMinted = async () => {
-    const value = await contract.methods.checkNumberOfNftMinted().call({from: accounts[0]});
+    const value = await contract.methods
+      .checkNumberOfNftMinted()
+      .call({ from: accounts[0] });
     setTrackNumber(value);
-  }
+  };
   const [currentPrice, setCurrentPrice] = useState(mintPriceInETH);
 
   const checkPrice = async () => {
-    const value = await contract.methods.checkPrice().call({from: accounts[0]});
+    const value = await contract.methods
+      .checkPrice()
+      .call({ from: accounts[0] });
     const temp = value / 1000000000000000000;
     setCurrentPrice(temp);
-  }
-  
-  const isOwner2 = true;
+  };
 
-  
-  
-  
   return (
     <>
       <section className="page-mint">
@@ -131,7 +130,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        
         <Footer />
       </section>
     </>

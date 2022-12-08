@@ -6,7 +6,6 @@ footer {
   align-items: center;
   width: 100vw;
   height: 30vh;
-  /* background-color: blue; */
 }
 
 .footer-mint {
@@ -14,7 +13,6 @@ footer {
   justify-content: space-evenly;
   width: 70%;
   height: 80%;
-  /* background-color: red; */
   flex-direction: column;
 }
 
@@ -41,11 +39,9 @@ footer {
   font-size: 0.6em;
   display: flex;
   align-items: flex-end;
-  /* background-color: red; */
 }
 
 .copyright-text {
-  /* background-color: green; */
   height: 40%;
 }
 
@@ -153,7 +149,6 @@ footer {
     justify-content: space-between;
     width: 70%;
     height: 80%;
-    /* background-color: red; */
     flex-direction: column;
   }
     .footer-mint > span {
