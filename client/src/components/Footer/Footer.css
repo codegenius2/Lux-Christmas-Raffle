@@ -145,6 +145,17 @@ footer {
 }
 
 @media (min-width:1800px) {
+  footer{
+    height: 20vh;
+  }
+  .footer-mint {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    height: 80%;
+    /* background-color: red; */
+    flex-direction: column;
+  }
     .footer-mint > span {
         font-size: 1.6em;
     }
@@ -161,6 +172,23 @@ footer {
 }
 
 @media (min-width:2560px) {
+    footer{
+      height: 22vh;
+      justify-content: space-between;
+    }
+    .footer-mint {
+      display: flex;
+      justify-content: space-between;
+      width: 30%;
+      height: 55%;
+      flex-direction: column;
+    }
+    .copyright-container {
+      height: 40%;
+      font-size: 0.6em;
+      display: flex;
+      align-items: flex-end;
+    }
     .copyright-text{
         font-size: 1.8em;
     }

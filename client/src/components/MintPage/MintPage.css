@@ -120,7 +120,21 @@
     font-size: 1.8em;
   }
   .button-28{
-    font-size: 1.7em;
+    font-size: 1.3em;
+  }
+  .select-mint{
+    width: 35%;
+  }
+}
+
+/* IPAD AIR */
+
+@media (min-width:820px) {
+  .text-mint-container{
+    font-size: 1.8em;
+  }
+  .button-28{
+    font-size: 1.3em;
   }
   .select-mint{
     width: 30%;
@@ -167,26 +181,48 @@
 }
 
 @media (min-width: 1920px) {
+  .mint-selector{
+    height: 100%;
+  }
+  .text-mint-container{
+    line-height: 160%;
+  }
+  .select-mint{
+    align-items: flex-end;
+    height: 15%;
+    width: 320px;
+  }
   .text-mint-container{
     font-size:1.7em;
   }
   .button-28{
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
   .crossmint-button{
     font-size: 1.6em;
   }
 
-  @media (min-width:2560px) {
-    .text-mint-container{
-      font-size: 1.9em;
-    }
-    .button-28{
-      font-size: 1.8em;
-    }
-    .crossmint-button{
-      font-size: 2em;
-    }
-  }
+}
 
+
+
+@media (min-width:2560px) {
+  .mint-selector{
+    height: 100%;
+  }
+  .select-mint{
+    align-items: flex-end;
+    height: 20%;
+    width: 350px;
+  }
+  .text-mint-container{
+    font-size: 1.9em;
+  }
+  
+  .button-28{
+    font-size: 1.6em;
+  }
+  .crossmint-button{
+    font-size: 1.8em;
+  }
 }

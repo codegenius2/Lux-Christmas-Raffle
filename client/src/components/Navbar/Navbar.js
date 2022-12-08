@@ -4,7 +4,7 @@ import "./Navbar.css";
 function Navbar() {
   return (
     <section className="navbar-container">
-      <a href="">
+      <a href="/#">
         <svg
           className="logo-lux"
           version="1.1"

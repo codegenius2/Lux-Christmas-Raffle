@@ -105,13 +105,15 @@
 
 @media (min-width:1800px) {
   .landing-page-container{
-    font-size: 6em;
+    font-size: 5em;
+  }
+  .page-container {
+    height: 65vh;
   }
 }
 
-@media (min-width:1920px) {
-  .landing-page-container{
-    font-size: 7em;
+@media (min-width:2560px) {
+  .page-container {
+    height: 55vh;
   }
-
 }

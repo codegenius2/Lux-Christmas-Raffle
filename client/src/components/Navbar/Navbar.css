@@ -20,17 +20,17 @@
 
 @media (min-width: 768px) {
     .logo-lux{
-        height: 15em;
-        width: 15em;
+        height: 13em;
+        width: 13em;
         transform: translateY(12px);
     }
 }
 /* IPAD AIR  */
 @media (min-width:820px) {
     .logo-lux{
-        height: 15em;
-        width: 15em;
-        transform: translateY(12px);
+        height: 14em;
+        width: 14em;
+        transform: translatey(17px);
     }
 }
 
@@ -38,8 +38,6 @@
 
 @media (min-width:1800px) {
     .logo-lux{
-        height: 20em;
-        width: 20em;
-        transform: translatey(18px);
+        
     }
 }
