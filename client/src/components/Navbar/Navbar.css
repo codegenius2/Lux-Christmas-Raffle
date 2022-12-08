@@ -7,13 +7,12 @@
     width: 100vw;
     max-width: 100vw;
     background-color: #bbafa9;
-    /* background-color: green; */
 }
 
 .logo-lux {
     height: 8em;
     width: 8em;
-    transform: translateY(6px); /* A modifier en responsive*/
+    transform: translateY(6px); 
 }
 
 /* IPAD MINI */
@@ -31,13 +30,5 @@
         height: 14em;
         width: 14em;
         transform: translatey(17px);
-    }
-}
-
-/* PC */
-
-@media (min-width:1800px) {
-    .logo-lux{
-        
     }
 }

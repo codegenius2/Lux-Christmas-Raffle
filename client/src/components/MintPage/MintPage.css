@@ -6,22 +6,18 @@
     height: 95%;
     width: 100vw;
     text-align: center;
-    /* background-color: red; */
     flex-direction: column;
   }
   .text-mint-container{
     height: 20%;
     line-height: 130%;
-    /* background-color: green; */
   }
   .select-mint {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* width: 100vw; */
     width: 35%;
     height: 50%;
-    /* background-color: blue; */
   }
   
   .button-28 {
@@ -73,7 +69,6 @@
   
   select {
     width: 30% !important;
-    /* padding: 0.4em 1em !important; */
   }
 
   .crossmint-button{
@@ -203,8 +198,6 @@
   }
 
 }
-
-
 
 @media (min-width:2560px) {
   .mint-selector{

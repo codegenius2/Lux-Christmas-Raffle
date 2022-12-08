@@ -32,20 +32,21 @@ export default function Home() {
   };
 
   const [uri, setURI] = useState();
-
   const handleSetURI = (e) => {
     setURI(e.target.value);
   };
+
   const setBaseURI = async () => {
     await contract.methods.setBaseURI(uri).send({ from: accounts[0] });
   };
 
-  const [rrr, setRrr] = useState("?");
+  const [currentUri, setCurrentUri] = useState("?");
+
   const getURI = async () => {
     const value = await contract.methods
       .tokenURI(0)
       .call({ from: accounts[0] });
-    setRrr(value);
+    setCurrentUri(value);
   };
 
   const [price, setPrice] = useState();
@@ -72,17 +73,24 @@ export default function Home() {
   };
 
   const mintPriceInETH = mintPrice / 1000000000000000000;
-  const [trackNumber, setTrackNumber] = useState("Please check");
-  
-  const checkNumberOfNftMinted = async () => {
-    const value = await contract.methods.checkNumberOfNftMinted().call({from: accounts[0]});
-    setTrackNumber(value);
-  }
-  
-  
-  const isOwner2 = false;
+  const [trackNumber, setTrackNumber] = useState("?");
 
-  
+  const checkNumberOfNftMinted = async () => {
+    const value = await contract.methods
+      .checkNumberOfNftMinted()
+      .call({ from: accounts[0] });
+    setTrackNumber(value);
+  };
+  const [currentPrice, setCurrentPrice] = useState(mintPriceInETH);
+
+  const checkPrice = async () => {
+    const value = await contract.methods
+      .checkPrice()
+      .call({ from: accounts[0] });
+    const temp = value / 1000000000000000000;
+    setCurrentPrice(temp);
+  };
+
   return (
     <>
       <section className="page-mint">
@@ -93,12 +101,12 @@ export default function Home() {
               Christmas Collectible Raffle
             </section>
             <div className="mintpage-container">
-              {isOwner2 ? (
+              {isOwner ? (
                 <AdminPage
                   handleSetURI={handleSetURI}
                   uri={uri}
                   setBaseURI={setBaseURI}
-                  rrr={rrr}
+                  currentUri={currentUri}
                   getURI={getURI}
                   handleChangePrice={handleChangePrice}
                   price={price}
@@ -109,7 +117,9 @@ export default function Home() {
                   number={number}
                   mintPartnership={mintPartnership}
                   changePrice={changePrice}
-                  mintPrice={mintPrice}
+                  mintPriceInETH={mintPriceInETH}
+                  currentPrice={currentPrice}
+                  checkPrice={checkPrice}
                   checkNumberOfNftMinted={checkNumberOfNftMinted}
                   trackNumber={trackNumber}
                 />
@@ -126,7 +136,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        
         <Footer />
       </section>
     </>
