@@ -102,46 +102,58 @@ footer {
 
 @media (min-width:1024px) {
     .footer-mint > span {
-        font-size: 2.0em;
+        font-size: 1.2em;
     }
     .icons-socials{
         height: 3em;
         width: 3em;
     }
     .copyright-text {
-        font-size: 2.1em;
+        font-size: 1.2em;
     }
 }
 
 @media (min-width:1200px) {
     .footer-mint > span {
-        font-size: 2.4em;
+        font-size: 1.4em;
     }
     .icons-socials {
-        height: 6em;
-        width: 6em;
+        height: 4em;
+        width: 4em;
+    }
+    .copyright-text{
+        font-size: 1.4em;
     }
 }
 
 @media (min-width:1600px) {
     .footer-mint > span {
-        font-size: 3em;
+        font-size: 1.5em;
+    }
+    .icons-socials{
+     font-size: 1.1em;   
+    }
+    .footer-mint{
+        width: 40%;
     }
     .copyright-text{
-        font-size: 3em;
+        font-size: 1.5em;
     }
 }
 
 @media (min-width:1800px) {
     .footer-mint > span {
-        font-size: 3.5em;
+        font-size: 1.6em;
     }
     .icons-socials{
-        height: 7em;
-        width: 7em;
+        height: 4.5em;
+        width: 4.5em;
+    }
+    .footer-mint{
+        width: 45%;
     }
     .copyright-text{
-        font-size: 3.3em;
+        font-size: 1.5em;
     }
 }
 

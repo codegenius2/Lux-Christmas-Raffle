@@ -121,25 +121,35 @@
 
 @media (min-width: 1024px) {
  .text-mint-container{
-  font-size: 2em;
+  font-size: 1.5em;
+  line-height:180%;
+ }
+ .button-28{
+  font-size: 1.2em;
+ }
+ .select-mint{
+  width: 18%;
  }
 }
 
 @media (min-width: 1200px) {
   .text-mint-container{
-    font-size: 2.5em;
+    font-size: 1.7em;
   }
   .button-28{
-    font-size: 2em;
+    font-size: 1.4em;
   }
 }
 
 @media (min-width: 1600px) {
   .text-mint-container{
-    font-size: 3.3em;
+    font-size: 1.7em;
   }
   .button-28{
-    font-size: 3em;
+    font-size: 1.5em;
+  }
+  .select-mint{
+    width: 15%;
   }
 }
 

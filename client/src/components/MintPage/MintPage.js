@@ -33,7 +33,6 @@ const MintPage = ({
               </button>
             </span>
         </div>
-        je suis crossmint
       </div>
     </>
   );
