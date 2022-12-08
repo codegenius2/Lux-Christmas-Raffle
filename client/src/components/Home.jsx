@@ -6,7 +6,6 @@ import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
 import MintPage from "./MintPage/MintPage";
 import AdminPage from "./AdminPage/AdminPage";
-import { CrossmintPayButton } from "@crossmint/client-sdk-react-ui";
 import web3 from "web3";
 
 export default function Home() {
@@ -68,6 +67,16 @@ export default function Home() {
 
   const mintPriceInETH = mintPrice / 1000000000000000000;
   const isOwner2 = false;
+  const [trackNumber, setTrackNumber] = useState("Please check");
+
+  const checkNumberOfNftMinted = async () => {
+    const value = await contract.methods.checkNumberOfNftMinted().call({from: accounts[0]});
+    setTrackNumber(value);
+  }
+
+  
+
+  // const isOwner2 = false;
   return (
     <>
       <section className="page-mint">
@@ -78,7 +87,7 @@ export default function Home() {
               Christmas Collectible Raffle
             </section>
             <div className="mintpage-container">
-              {isOwner2 ? (
+              {isOwner ? (
                 <AdminPage
                   handleSetURI={handleSetURI}
                   uri={uri}
@@ -93,6 +102,10 @@ export default function Home() {
                   handleNumberChange={handleNumberChange}
                   number={number}
                   mintPartnership={mintPartnership}
+                  changePrice={changePrice}
+                  mintPrice={mintPrice}
+                  checkNumberOfNftMinted={checkNumberOfNftMinted}
+                  trackNumber={trackNumber}
                 />
               ) : (
                 <MintPage
@@ -101,20 +114,13 @@ export default function Home() {
                   handleNumberChange={handleNumberChange}
                   number={number}
                   mint={mint}
+                  mintPriceInETH={mintPriceInETH}
                 />
               )}
             </div>
-            <CrossmintPayButton
-              clientId="8a54d4f3-de31-43a9-acda-a1361836bef0"
-              mintConfig={{
-                type: "erc-721",
-                totalPrice: `${mintPriceInETH}`,
-                _quantity: "1",
-              }}
-              environment="staging"
-            />
           </div>
         </div>
+        
         <Footer />
       </section>
     </>
