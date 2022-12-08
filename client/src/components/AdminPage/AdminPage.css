@@ -31,14 +31,23 @@ background-color: red;
   justify-content: space-evenly;
   background-color: green;
 }
-.admin-content-1-state{
+.admin-content-1-container{
   background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+}
+.admin-content-1-wrap{
+  background-color: yellow; 
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 80%;
-  height: 10%;
+  height: 100%;
 }
+/* Modifier taille green puis taille white puis yellow pour laisser de la place a mint partenaire*/
 
 
 

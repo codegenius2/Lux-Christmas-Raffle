@@ -27,18 +27,25 @@ function AdminPage({
         <div className="admin-container">
           <div className="admin-wrap">
             <div className="admin-content-1">
-              <div className="admin-content-1-state">
-                <span>Le mint est en cours ! </span>
-                <button>Stop mint</button>
+              <div className="admin-content-1-container">
+                <div className="admin-content-1-wrap">
+                  <span>Le mint est en cours ! </span>
+                  <button>Stop mint</button>
+                </div>
               </div>
-              <div>
-                <span>Nft minté : ? / 1000 </span>
-                <button>Check</button>
+              <div className="admin-content-1-container">
+                <div className="admin-content-1-wrap">
+                  <span>Nft minté : ? / 1000 </span>
+                  <button>Check</button>
+                </div>
               </div>
-              <div>
-                <span>Mint partenaires</span>
-                <input type="text" />
-                <button>Mint</button>
+              <div className="admin-content-1-container">
+                <div className="admin-content-1-wrap">
+                  <span>Mint partenaires</span>
+                  <input type="text" />
+
+                  <button>Mint</button>
+                </div>
               </div>
             </div>
             <div className="admin-content-2">
