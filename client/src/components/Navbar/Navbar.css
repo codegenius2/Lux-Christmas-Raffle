@@ -32,11 +32,3 @@
         transform: translatey(17px);
     }
 }
-
-/* PC */
-
-@media (min-width:1800px) {
-    .logo-lux{
-        
-    }
-}
