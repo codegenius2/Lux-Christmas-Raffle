@@ -14,6 +14,12 @@ export default function Home() {
   } = useEth();
 
   const [number, setNumber] = useState(1);
+  // Chaque composant doit gérer son state
+  // Informations non nécéssaires pour admin
+  // Number dans AdminPage changer le nom de variable
+  // Mettre la fonction mint sur admin et sur mintpage (client)
+  // si logique differente entre les deux composants vaut mieux les séparer
+  // si même logique sur les deux --> home.jsx
 
   const handleNumberChange = (e) => {
     setNumber(parseInt(e.target.value));
@@ -74,7 +80,7 @@ export default function Home() {
   }
   
   
-  const isOwner2 = true;
+  const isOwner2 = false;
 
   
   return (
