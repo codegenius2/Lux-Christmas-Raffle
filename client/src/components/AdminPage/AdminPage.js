@@ -18,54 +18,70 @@ function AdminPage({
   changePrice,
   mintPrice,
   checkNumberOfNftMinted,
-  trackNumber
+  trackNumber,
 }) {
   return (
     <>
-      <div>
-        Pannaux d'admin : <br />
-        <p>Le mint {isMintOn ? "Live !" : "est en pause. Stay tuned !"}</p>
+        <div className="admin-title-dashboard">Panneau administrateur :</div>
+      <section className="admin-page-container">
+        <br />
+        <div className="admin-start-stop">
+          <p>
+            Le mint {isMintOn ? "est en live !" : "est en pause. Stay tuned !"}
+          </p>
+          {/* ------------------------------------------------------------ */}
+
+          {isMintOn ? (
+            <>
+              Cliquez ici pour arrêter le mint
+              <button className="admin-button-onoff" onClick={stopMint}>
+                Off
+              </button>
+            </>
+          ) : (
+            <>
+              Cliquez ici pour commencer le mint
+              <button className="admin-button-onoff" onClick={enableMint}>
+                ON
+              </button>
+            </>
+          )}
+        </div>
         {/* ------------------------------------------------------------ */}
-        {isMintOn ? (
-          <>
-            Turn mint off
-            <button onClick={stopMint}>Off</button>
-          </>
-        ) : (
-          <>
-            Turn mint on
-            <button onClick={enableMint}>ON</button>
-          </>
-        )}
-        {/* ------------------------------------------------------------ */}
         <br />
-        <p>Le prix du mint est {mintPrice / 1000000000000000000} ETH</p>
-        <br />
-        <input
-          onChange={handleChangePrice}
-          type="number"
-          value={price}
-          placeholder="new price in wei"
-        />
-        <button onClick={changePrice}>set new price in wei</button>   Check this
-        website to convert eth in wei : https://eth-converter.com/ <br />
-        <br />
-        <input
-          onChange={handleSetURI}
-          type="text"
-          value={uri}
-          placeholder="new URI"
-        />
-        <button onClick={setBaseURI}>set new uri</button>
+        <div className="admin-mint-price">
+          <p>Le prix du mint est de {mintPrice / 1000000000000000000} ETH</p>
+          <br />
+          <input
+            onChange={handleChangePrice}
+            type="number"
+            value={price}
+            placeholder="new price in wei"
+          />
+          <button onClick={changePrice}>set new price in wei</button>   Check
+          this website to convert eth in wei :
+          <a href="https://eth-converter.com/">https://eth-converter.com/</a>
+        </div>
         <br />
         <br />
-        Current URI : {rrr}
-        <button onClick={getURI}>get URI</button>
+        <div className="admin-set-uri">
+          <input
+            onChange={handleSetURI}
+            type="text"
+            value={uri}
+            placeholder="new URI"
+          />
+          <button onClick={setBaseURI}>set new uri</button>
+          <br />
+          <br />
+          Current URI : {rrr}
+          <button onClick={getURI}>get URI</button>
+        </div>
         <br />
-        Nombre de NFt Mint :  {trackNumber} / 1000   
+        Nombre de NFt Mint : {trackNumber} / 1000   
         <button onClick={checkNumberOfNftMinted}>Check</button>
         <br />
-        <select onChange={handleNumberChange} value={number} id="mint">
+        <select onChange={handleNumberChange} value={number} className="admin-select-mint" id="mint">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -81,7 +97,7 @@ function AdminPage({
           Mint pour partenaire /!\ Limité à 9
         </button>
             Do not require to set mint on
-      </div>
+      </section>
     </>
   );
 }

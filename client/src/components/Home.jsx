@@ -74,7 +74,7 @@ export default function Home() {
   }
   
   
-  const isOwner2 = false;
+  const isOwner2 = true;
 
   
   return (
