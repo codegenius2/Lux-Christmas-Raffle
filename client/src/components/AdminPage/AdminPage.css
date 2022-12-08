@@ -2,13 +2,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: antiquewhite;
+  
   width: 100vw;
   height: 120%;
 }
 .admin-section > h2 {
   font-weight: bolder;
   font-size: large;
+  height: 7%;
 }
 .admin-container {
 display: flex;
@@ -16,12 +17,13 @@ justify-content: center;
 align-items: center;
 width: 100%;
 height: 90%;
-background-color: red;
+background-color: #ddd7d4;
 }
 .admin-wrap{
-  background-color: blue;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  width: 50%;
   height: 100%;
 }
 .admin-content-1{
@@ -29,7 +31,8 @@ background-color: red;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  background-color: green;
+  width: 35%;
+  height: 100%;
 }
 .admin-content-1-container{
   background-color: #ffffff;
@@ -40,23 +43,98 @@ background-color: red;
   height: 10%;
 }
 .admin-content-1-wrap{
-  background-color: yellow; 
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 80%;
   height: 100%;
 }
-/* Modifier taille green puis taille white puis yellow pour laisser de la place a mint partenaire*/
-
-
-
-
-
-
-
-
-
+.admin-content-1-wrap > div {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+}
+.admin-content-2{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  height: 100%;
+}
+.admin-content-2-price{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 45%;
+}
+.admin-content-2-price-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  width: 100%;
+  height: 18%;
+}
+.admin-content-2-price-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+}
+.admin-content-2-price-wrap > a {
+  color: black;
+  width: 40%;
+  height: 30%;
+}
+.admin-content-2-price-wrap > div {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 40%;
+}
+.admin-content-2-price-wrap > div > input {
+  width: 50%;
+  height: 30%;
+}
+.admin-content-2-price-wrap > div > button {
+  width: 50%;
+  height: 30%;
+}
+.admin-content-2-uri{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 45%;
+}
+.admin-content-2-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  width: 100%;
+  height: 18%;
+}
+.admin-content-2-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+}
+.admin-content-2-wrap > div {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 40%;
+}
+.admin-content-2-wrap > div > input {
+  width: 50%;
+  height: 30%;
+}
 
 
 
