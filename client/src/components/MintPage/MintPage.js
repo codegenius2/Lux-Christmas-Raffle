@@ -14,16 +14,16 @@ const MintPage = ({
     <>
       <div className="mint-selector">
         <div className="text-mint-container">
-          <p>Le mint {isMintOn ? "est live !" : "est en pause. Stay tuned !"}</p>
-          <p>Le prix du mint est {mintPrice / 1000000000000000000} ETH</p>
+          <p>{isMintOn ? "La loterie est désormais ouverte !" : "La loterie démarre bientôt. Tenez-vous prêt !"}</p>
+          <p>Le prix d'un collectible est de {mintPrice / 1000000000000000000} ETH</p>
         </div>
         <div className="select-mint">
             <select
               className="button-28 "
               onChange={handleNumberChange}
               value={number}
-              id="mint"
             >
+              <option value="choose">Veuillez sélectionner une quantité</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>

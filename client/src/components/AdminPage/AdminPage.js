@@ -38,7 +38,7 @@ function AdminPage({
               <div className="admin-content-1-container">
                 <div className="admin-content-1-wrap">
                   <span>
-                    Le mint est {isMintOn ? "en cours !" : "en pause"}
+                    Le mint des NFt est {isMintOn ? "en cours !" : "en pause"}
                   </span>
                   {isMintOn ? (
                     <button onClick={stopMint}>Stop mint</button>

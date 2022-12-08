@@ -13,7 +13,7 @@ export default function Home() {
     state: { contract, accounts, isOwner, isMintOn, mintPrice },
   } = useEth();
 
-  const [number, setNumber] = useState(1);
+  const [number, setNumber] = useState("choose");
   // Chaque composant doit gérer son state
   // Informations non nécéssaires pour admin
   // Number dans AdminPage changer le nom de variable
