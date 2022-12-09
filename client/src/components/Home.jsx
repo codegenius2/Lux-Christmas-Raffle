@@ -26,9 +26,11 @@ export default function Home() {
   };
 
   const mint = () => {
-    contract.methods
-      .mint(number, accounts[0])
-      .send({ from: accounts[0], value: mintPrice });
+    if (number == "choose"){
+      contract.methods
+        .mint(number, accounts[0])
+        .send({ from: accounts[0], value: mintPrice });
+    }
   };
 
   const [uri, setURI] = useState();

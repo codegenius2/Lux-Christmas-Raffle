@@ -19,11 +19,11 @@ const MintPage = ({
         </div>
         <div className="select-mint">
             <select
-              className="button-28 "
+              className="button-28 button-select"
               onChange={handleNumberChange}
               value={number}
             >
-              <option value="choose">Veuillez sélectionner une quantité</option>
+              <option value="choose">Sélectionner</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -35,6 +35,7 @@ const MintPage = ({
               </button>
             </span>
         </div>
+        <span className="mint-ou">OU</span>
         <CrossmintPayButton
         className="crossmint-button"
           clientId="8a54d4f3-de31-43a9-acda-a1361836bef0"
