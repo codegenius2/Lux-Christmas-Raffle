@@ -49,5 +49,4 @@ const MintPage = ({
     </>
   );
 };
-
 export default MintPage;
