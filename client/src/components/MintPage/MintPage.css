@@ -67,10 +67,6 @@
   transform: translateY(0);
   }
   
-  .button-select{
-    /* -webkit-appea */
-  }
-
   .button-select::after {
    background-color: red;
   }

@@ -58,6 +58,7 @@ function AdminPage({
                   <span>Mint partenaires</span>
                   <div>
                     <select onChange={handleNumberChange} value={number}>
+                      <option value="0">Sélectionner</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -67,7 +68,6 @@ function AdminPage({
                       <option value="7">7</option>
                       <option value="8">8</option>
                       <option value="9">9</option>
-                      <option value="10">10</option>
                     </select>
                     <button onClick={mintPartnership}>Mint</button>
                   </div>
@@ -80,7 +80,7 @@ function AdminPage({
                   <div className="admin-content-2-price-wrap">
                     <span>
                       Le prix du mint est de{" "}
-                      {count == 0 ? mintPriceInETH : currentPrice} ETH
+                      {count === 0 ? mintPriceInETH : currentPrice} ETH
                     </span>
                     <button onClick={handleCheckPrice}>Check price</button>
                   </div>
