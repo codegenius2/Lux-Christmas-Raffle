@@ -1,16 +1,34 @@
+/* Mobile max-width 320 */
 .navbar-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20vw;
+    height: 15vh;
     width: 100vw;
+    max-width: 100vw;
     background-color: #bbafa9;
-    /* position: fixed;
-    overflow: hidden;
-    top: 0; */
 }
 
-.lux-logo-navbar{
-    width: 40%;
-    height: auto;
+.logo-lux {
+    height: 8em;
+    width: 8em;
+    transform: translateY(6px); 
+}
+
+/* IPAD MINI */
+
+@media (min-width: 768px) {
+    .logo-lux{
+        height: 13em;
+        width: 13em;
+        transform: translateY(12px);
+    }
+}
+/* IPAD AIR  */
+@media (min-width:820px) {
+    .logo-lux{
+        height: 14em;
+        width: 14em;
+        transform: translatey(17px);
+    }
 }

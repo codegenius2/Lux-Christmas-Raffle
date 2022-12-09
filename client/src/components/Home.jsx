@@ -3,8 +3,9 @@ import { useState } from "react";
 import "./Home.css";
 import React from "react";
 import Navbar from "./Navbar/Navbar";
-import LandingPage from "./LandingPage/LandingPage";
-import { CrossmintPayButton } from "@crossmint/client-sdk-react-ui";
+import Footer from "./Footer/Footer";
+import MintPage from "./MintPage/MintPage";
+import AdminPage from "./AdminPage/AdminPage";
 import web3 from "web3";
 
 export default function Home() {
@@ -12,37 +13,44 @@ export default function Home() {
     state: { contract, accounts, isOwner, isMintOn, mintPrice },
   } = useEth();
 
-  const [number, setNumber] = useState(1);
+  const [number, setNumber] = useState(0);
+  // Chaque composant doit gérer son state
+  // Informations non nécéssaires pour admin
+  // Number dans AdminPage changer le nom de variable
+  // Mettre la fonction mint sur admin et sur mintpage (client)
+  // si logique differente entre les deux composants vaut mieux les séparer
+  // si même logique sur les deux --> home.jsx
 
   const handleNumberChange = (e) => {
     setNumber(parseInt(e.target.value));
   };
 
   const mint = () => {
-    contract.methods.mint(number, accounts[0]).send({ from: accounts[0], value: mintPrice });
+    if (number === 0){
+      return;
+    }else{
+      contract.methods
+        .mint(number, accounts[0])
+        .send({ from: accounts[0], value: mintPrice });
+    }
   };
 
-  // const [myNft, setMyNft] = useState("?");
-
-  // const balanceOf = async () => {
-  //   const value = await contract.methods.balanceOf(accounts[0]).call();
-  //   setMyNft(value);
-  // };
   const [uri, setURI] = useState();
-
   const handleSetURI = (e) => {
     setURI(e.target.value);
   };
+
   const setBaseURI = async () => {
     await contract.methods.setBaseURI(uri).send({ from: accounts[0] });
   };
 
-  const [rrr, setRrr] = useState("?");
+  const [currentUri, setCurrentUri] = useState("?");
+
   const getURI = async () => {
     const value = await contract.methods
       .tokenURI(0)
       .call({ from: accounts[0] });
-    setRrr(value);
+    setCurrentUri(value);
   };
 
   const [price, setPrice] = useState();
@@ -56,7 +64,7 @@ export default function Home() {
   const changePrice = async () => {
     const newPrice = web3.utils.toBN(price);
     await contract.methods.changePrice(newPrice).send({ from: accounts[0] });
-  }
+  };
   const enableMint = async () => {
     await contract.methods.enableMint().send({ from: accounts[0] });
   };
@@ -67,112 +75,73 @@ export default function Home() {
   const mintPartnership = async () => {
     await contract.methods.mintPartnership(number).send({ from: accounts[0] });
   };
-  const mintPriceInETH = mintPrice/1000000000000000000;
 
+  const mintPriceInETH = mintPrice / 1000000000000000000;
+  const [trackNumber, setTrackNumber] = useState("?");
+
+  const checkNumberOfNftMinted = async () => {
+    const value = await contract.methods
+      .checkNumberOfNftMinted()
+      .call({ from: accounts[0] });
+    setTrackNumber(value);
+  };
+  const [currentPrice, setCurrentPrice] = useState(mintPriceInETH);
+
+  const checkPrice = async () => {
+    const value = await contract.methods
+      .checkPrice()
+      .call({ from: accounts[0] });
+    const temp = value / 1000000000000000000;
+    setCurrentPrice(temp);
+  };
+ 
   return (
     <>
-      {isOwner ? (
-        <section>
-          <Navbar />
-          <div className="page-container">
-            <LandingPage />
-            Panneau d'admin : <br />
-            <input
-              onChange={handleSetURI}
-              type="text"
-              value={uri}
-              placeholder="new URI"
-            />
-            <button onClick={setBaseURI}>set new uri</button>
-            <br />
-            Current URI : {rrr}
-            <button onClick={getURI}>get URI</button>
-            <br />
-            <input
-              onChange={handleChangePrice}
-              type="number"
-              value={price}
-              placeholder="new price in wei"
-            />
-            <button onClick={changePrice}>set new price in wei</button>   Check
-            this website to convert eth in wei : https://eth-converter.com/
-            <br />
-            {/* ------------------------------------------------------------ */}
-            {isMintOn ? (
-              <>
-                Turn mint off
-                <button onClick={stopMint}>Off</button>
-              </>
-            ) : (
-              <>
-                Turn mint on
-                <button onClick={enableMint}>ON</button>
-                <br />
-              </>
-            )}
-            {/* ------------------------------------------------------------ */}
-            <br />
-            <select onChange={handleNumberChange} value={number} id="mint">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-            <button onClick={mintPartnership}>Mint</button>    Do not require to
-            set mint on
-            <br />
-            {/* <CrossmintPayButton
-                clientId="e83380fa-5f27-4aad-a0b5-213724f97691"
-                mintConfig={{"type":"wen-mint-erc721a","totalPrice":`${mintPriceInETH}`,"quantity":`${number}`}}
-                environment="staging"
-                
-            /> */}
-            <CrossmintPayButton
-                clientId="8a54d4f3-de31-43a9-acda-a1361836bef0"
-                mintConfig={{"type":"erc-721","totalPrice":`${mintPriceInETH}`,"_quantity":"1"}}
-                environment="staging"
-            />
-            <CrossmintPayButton
-                clientId="d2e0ba10-7854-42d3-a2a1-39d900467779"
-                mintConfig={{"type":"erc-721","totalPrice":"0.001","_quantity":"1"}}
-                
-            />
+      <section className="page-mint">
+        <Navbar />
+        <div className="page-container">
+          <div className="container-bis">
+            <section className="landing-page-container">
+              Christmas Collectible Raffle
+            </section>
+            <div className="mintpage-container">
+              {isOwner ? (
+                <AdminPage
+                  handleSetURI={handleSetURI}
+                  uri={uri}
+                  setBaseURI={setBaseURI}
+                  currentUri={currentUri}
+                  getURI={getURI}
+                  handleChangePrice={handleChangePrice}
+                  price={price}
+                  isMintOn={isMintOn}
+                  stopMint={stopMint}
+                  enableMint={enableMint}
+                  handleNumberChange={handleNumberChange}
+                  number={number}
+                  mintPartnership={mintPartnership}
+                  changePrice={changePrice}
+                  mintPriceInETH={mintPriceInETH}
+                  currentPrice={currentPrice}
+                  checkPrice={checkPrice}
+                  checkNumberOfNftMinted={checkNumberOfNftMinted}
+                  trackNumber={trackNumber}
+                />
+              ) : (
+                <MintPage
+                  isMintOn={isMintOn}
+                  mintPrice={mintPrice}
+                  handleNumberChange={handleNumberChange}
+                  number={number}
+                  mint={mint}
+                  mintPriceInETH={mintPriceInETH}
+                />
+              )}
+            </div>
           </div>
-        </section>
-      ) : (
-        // FIN PAGE ADMIN
-        // (par défaut)Page de base quand on est connecté
-        <section>
-          <Navbar />
-          <div className="page-container">
-            <LandingPage />
-            Le mint est {isMintOn ? "Live !" : "en pause. Stay tuned !"}
-            <br />
-            <br />
-            Le prix du mint est {mintPriceInETH} eth
-            <br />
-            <br />
-            <select onChange={handleNumberChange} value={number} id="mint">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select>
-            <button onClick={mint}>Mint</button>
-            <br />
-            <br />
-            {/* <div>My NFT</div>
-      <div>{myNft}</div><br />
-    <button onClick={balanceOf}>Check</button> */}
-          </div>
-        </section>
-      )}
+        </div>
+        <Footer />
+      </section>
     </>
   );
 }

@@ -20,8 +20,9 @@ function EthProvider({ children }) {
           const owner = await contract.methods.owner().call();
           if (accounts[0] === owner) {
             isOwner = true;
+          } else {
+            isOwner= false;
           }
-          // isOwner= false;
           const mintState = await contract.methods.isMintOn().call();
           if (mintState === true) {
             isMintOn = true;
