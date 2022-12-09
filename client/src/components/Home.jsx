@@ -13,7 +13,7 @@ export default function Home() {
     state: { contract, accounts, isOwner, isMintOn, mintPrice },
   } = useEth();
 
-  const [number, setNumber] = useState("choose");
+  const [number, setNumber] = useState(0);
   // Chaque composant doit gérer son state
   // Informations non nécéssaires pour admin
   // Number dans AdminPage changer le nom de variable
@@ -26,7 +26,9 @@ export default function Home() {
   };
 
   const mint = () => {
-    if (number == "choose"){
+    if (number === 0){
+      return;
+    }else{
       contract.methods
         .mint(number, accounts[0])
         .send({ from: accounts[0], value: mintPrice });

@@ -89,8 +89,7 @@
     font-size: 0.7em;
   }
 
-  /* IPHONE XR
-  */
+  /* IPHONE XR */
 @media (min-width: 414px) {
   .text-mint-container{
     font-size: 1.3em;
