@@ -92,7 +92,7 @@ export default function Home() {
     const temp = value / 1000000000000000000;
     setCurrentPrice(temp);
   };
-
+ 
   return (
     <>
       <section className="page-mint">
