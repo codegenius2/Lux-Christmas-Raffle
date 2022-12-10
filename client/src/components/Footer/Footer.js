@@ -17,13 +17,13 @@ function Footer() {
           <a href="mailto:luxresort@metalyde.com"> 
             <FontAwesomeIcon icon={faEnvelope} className="icons-socials" />
           </a>
-          <a href="https://discord.com/invite/YbnVGG3JdP" target={"_blank"}>
+          <a href="https://discord.com/invite/YbnVGG3JdP" rel="noreferrer" target={"_blank"}>
             <FontAwesomeIcon icon={faDiscord} className="icons-socials" />
           </a>
-          <a href="https://www.instagram.com/luxresorts/" target={"_blank"}>
+          <a href="https://www.instagram.com/luxresorts/" rel="noreferrer" target={"_blank"}>
             <FontAwesomeIcon icon={faInstagram} className="icons-socials" />
           </a>
-          <a href="https://www.facebook.com/luxresorts/" target={"_blank"}>
+          <a href="https://www.facebook.com/luxresorts/" rel="noreferrer" target={"_blank"}>
             <FontAwesomeIcon icon={faFacebook} className="icons-socials" />
           </a>
         </div>

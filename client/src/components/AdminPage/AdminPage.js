@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState} from "react";
+import { useEffect } from "react";
 import "./AdminPage.css";
 
 function AdminPage({
@@ -27,7 +28,24 @@ function AdminPage({
     await checkPrice();
     count = 1;
   };
+  const handleCopy = () => {
+    navigator.clipboard.writeText(currentUri);
+  }
 
+  const [concatenateURI, setConcatenateURI] = useState(currentUri)
+  // const handleGetURI = async () => {
+  //   await getURI();
+  //   const temp = currentUri.slice(0,(currentUri.length*1)/5);
+  //   const temp2 = currentUri.slice((currentUri.length * 4)/5, currentUri.length);
+  //   const concat = `${temp}...${temp2}`;
+  //   setConcatenateURI(concat);
+  // }
+  useEffect(() => {
+    const temp = currentUri.slice(0,(currentUri.length*1)/5);
+    const temp2 = currentUri.slice((currentUri.length * 4)/5, currentUri.length);
+    const concat = `${temp}...${temp2}`;
+    setConcatenateURI(concat);
+  }, [currentUri])
   return (
     <>
       <section className="admin-section">
@@ -88,7 +106,7 @@ function AdminPage({
                 <div className="admin-content-2-price-container">
                   <div className="admin-content-2-price-wrap">
                     Change price
-                    <a href="https://eth-converter.com/" target="_blank">
+                    <a href="https://eth-converter.com/" rel="noreferrer" target="_blank">
                       ( Convert eth in wei )
                     </a>
                     <div>
@@ -106,7 +124,8 @@ function AdminPage({
               <div className="admin-content-2-uri">
                 <div className="admin-content-2-container">
                   <div className="admin-content-2-wrap">
-                    <span>Current URI : {currentUri}</span>
+                    <span>Current URI : {concatenateURI}</span>
+                    {currentUri !== "?" ? <button onClick={handleCopy}>Copy</button> : ""}
                     <button onClick={getURI}>Get URI</button>
                   </div>
                 </div>
