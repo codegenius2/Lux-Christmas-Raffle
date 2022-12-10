@@ -24,7 +24,9 @@ const MintPage = ({
             ETH
           </p>
         </div>
-        <div className="select-mint">
+        {isMintOn &&  
+          <>
+          <div className="select-mint">
           <select
             className="button-28 button-select"
             onChange={handleNumberChange}
@@ -54,6 +56,7 @@ const MintPage = ({
           }}
           environment="staging"
         />
+        </>}
       </div>
     </>
   );
