@@ -14,23 +14,17 @@ function Footer() {
       <section className="footer-mint">
         <span>Rejoignez nous sur nos réseaux !</span>
         <div className="icons-container">
-          <a href="mailto:luxresort@metalyde.com"> 
-            <FontAwesomeIcon icon={faEnvelope} className="icons-socials" />
-          </a>
           <a href="https://discord.com/invite/YbnVGG3JdP" rel="noreferrer" target={"_blank"}>
             <FontAwesomeIcon icon={faDiscord} className="icons-socials" />
           </a>
           <a href="https://www.instagram.com/luxresorts/" rel="noreferrer" target={"_blank"}>
             <FontAwesomeIcon icon={faInstagram} className="icons-socials" />
           </a>
-          <a href="https://www.facebook.com/luxresorts/" rel="noreferrer" target={"_blank"}>
-            <FontAwesomeIcon icon={faFacebook} className="icons-socials" />
-          </a>
         </div>
       </section>
       <section className="copyright-container">
         <p className="copyright-text">
-          Copyright © 2022 LUX* Tous droits réservés
+          Copyright © 2022 LUX* All right reserved
         </p>
       </section>
     </footer>
