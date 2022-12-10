@@ -65,7 +65,7 @@ const MintPage = ({
                 </button>
               </span>
             </div>
-            <span className="mint-ou">OU</span>
+            <span className="mint-ou">OR</span>
             <CrossmintPayButton
               className="crossmint-button"
               clientId="5f7fdf88-f866-45b0-b5e2-f340aa62ae44"
