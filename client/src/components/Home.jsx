@@ -73,7 +73,11 @@ export default function Home() {
   };
 
   const mintPartnership = async () => {
+    if (number === 0){
+      return;
+    }else{
     await contract.methods.mintPartnership(number).send({ from: accounts[0] });
+    }
   };
 
   const mintPriceInETH = mintPrice / 1000000000000000000;
