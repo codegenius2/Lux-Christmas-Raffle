@@ -16,12 +16,12 @@ const MintPage = ({
         <div className="text-mint-container">
           <p>
             {isMintOn
-              ? "La loterie est désormais ouverte !"
+              ? "The Christmas sale is open! Discover the project by clicking here"
               : "La loterie démarre bientôt. Tenez-vous prêt !"}
           </p>
           <p>
-            Le prix d'un collectible est de {mintPrice / 1000000000000000000}{" "}
-            ETH
+            The price of the collectible is {mintPrice / 1000000000000000000}{" "}
+            ETH ∼ $1000
           </p>
         </div>
         {isMintOn &&  
@@ -32,7 +32,7 @@ const MintPage = ({
             onChange={handleNumberChange}
             value={number}
           >
-            <option value="0">Sélectionner</option>
+            <option value="0">Select</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -45,7 +45,7 @@ const MintPage = ({
             </button>
           </span>
         </div>
-        <span className="mint-ou">OU</span>
+        <span className="mint-ou">OR</span>
         <CrossmintPayButton
           className="crossmint-button"
           clientId="8a54d4f3-de31-43a9-acda-a1361836bef0"
