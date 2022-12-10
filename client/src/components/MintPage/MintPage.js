@@ -75,16 +75,6 @@ const MintPage = ({
                 _quantity: "1",
               }}
             />
-            {/* <CrossmintPayButton
-          className="crossmint-button"
-          clientId="5f7fdf88-f866-45b0-b5e2-f340aa62ae44"
-          mintConfig={{
-            type: "erc-721",
-            totalPrice: `${mintPriceInETH}`,
-            _quantity: "1",
-          }}
-          environment="staging"
-          /> */}
           </>
         )}
       </div>

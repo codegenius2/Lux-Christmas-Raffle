@@ -12,7 +12,7 @@ function Footer() {
   return (
     <footer>
       <section className="footer-mint">
-        <span>Rejoignez nous sur nos réseaux !</span>
+        <span>Join our community !</span>
         <div className="icons-container">
           <a href="https://discord.com/invite/YbnVGG3JdP" rel="noreferrer" target={"_blank"}>
             <FontAwesomeIcon icon={faDiscord} className="icons-socials" />
