@@ -43,7 +43,12 @@ const MintPage = ({
             )}
           </p>
           <p>
+<<<<<<< HEAD
           The price of the collectible is 0.79
+=======
+            The price of the collectible is 0,79
+            {/* {mintPrice / 1000000000000000000}{" "} */}
+>>>>>>> 6cce674efba391882828f6c9c3fbf3a9fc802447
             ETH ~ $1000
             {/* The price of the collectible is {mintPrice / 1000000000000000000}{" "}
             ETH ~ $1000 */}
@@ -72,6 +77,7 @@ const MintPage = ({
               </span>
             </div>
             <span className="mint-ou">OR</span>
+<<<<<<< HEAD
             
           </>
         )}
@@ -84,6 +90,19 @@ const MintPage = ({
                 _quantity: "1",
               }}
             />
+=======
+          </>
+        )}
+        <CrossmintPayButton
+          className="crossmint-button"
+          clientId="5f7fdf88-f866-45b0-b5e2-f340aa62ae44"
+          mintConfig={{
+            type: "erc-721",
+            totalPrice: "0.79",
+            _quantity: "1",
+          }}
+        />
+>>>>>>> 6cce674efba391882828f6c9c3fbf3a9fc802447
       </div>
     </>
   );
