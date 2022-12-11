@@ -12,6 +12,14 @@
     height: 20%;
     line-height: 130%;
   }
+  .text-mint-container > p > span > a {
+    text-decoration: none;
+    color: black;
+  }
+  .text-mint-container > p > span > a:hover {
+    color: #bbafa9;
+    text-decoration: underline;
+  }
   .select-mint {
     display: flex;
     justify-content: space-between;

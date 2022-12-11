@@ -12,21 +12,19 @@ function Footer() {
   return (
     <footer>
       <section className="footer-mint">
-        <span>Join us on our social network</span>
+        <span>Join our community !</span>
         <div className="icons-container">
-          
           <a href="https://discord.com/invite/YbnVGG3JdP" rel="noreferrer" target={"_blank"}>
             <FontAwesomeIcon icon={faDiscord} className="icons-socials" />
           </a>
           <a href="https://www.instagram.com/luxresorts/" rel="noreferrer" target={"_blank"}>
             <FontAwesomeIcon icon={faInstagram} className="icons-socials" />
           </a>
-          
         </div>
       </section>
       <section className="copyright-container">
         <p className="copyright-text">
-          Copyright © 2022 LUX* All rights reserved
+          Copyright © 2022 LUX* All right reserved
         </p>
       </section>
     </footer>
