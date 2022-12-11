@@ -1,11 +1,12 @@
 import React, { useReducer, useCallback, useEffect } from "react";
+import { useState } from "react";
 import Web3 from "web3";
 import EthContext from "./EthContext";
 import { reducer, actions, initialState } from "./state";
 
 function EthProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
-
+  // const [] = useState();
   const init = useCallback(
     async artifact => {
       if (artifact) {
@@ -33,6 +34,7 @@ function EthProvider({ children }) {
           mintPrice = mintPriceData;
         } catch (err) {
           console.error(err);
+          console.log("rrrr");
         }
         dispatch({
           type: actions.init,
@@ -41,36 +43,47 @@ function EthProvider({ children }) {
       }
     }, []);
 
-  useEffect(() => {
-    const tryInit = async () => {
-      try {
-        const artifact = require("../../contracts/Nft.json");
-        init(artifact);
-      } catch (err) {
-        console.error(err);
-      }
-    };
+  const [isConnect, setConnected] = useState(false);
+  const handleConnectWallet =  async () => {
+      const artifact = require("../../contracts/Nft.json");
+      await init(artifact);
+      setConnected(true);
+}
+  // useEffect(() => {
+  //   const tryInit = async () => {
+  //     try {
+  //       const artifact = require("../../contracts/Nft.json");
+  //       init(artifact);
+  //     } catch (err) {
+  //       console.error(err);
+  //       console.log("C'est kk");
+  //     }
+  //   };
 
-    tryInit();
-  }, [init]);
+  //   tryInit();
+  // }, [init]);
 
-  useEffect(() => {
-    const events = ["chainChanged", "accountsChanged"];
-    const handleChange = () => {
-      init(state.artifact);
-    };
+  // useEffect(() => {
+  //   const events = ["chainChanged", "accountsChanged"];
+  //   const handleChange = () => {
+  //     init(state.artifact);
+  //     console.log("C'est zz");
+  //   };
 
-    events.forEach(e => window.ethereum.on(e, handleChange));
-    return () => {
-      events.forEach(e => window.ethereum.removeListener(e, handleChange));
-    };
-  }, [init, state.artifact]);
+  //   events.forEach(e => window.ethereum.on(e, handleChange));
+  //   return () => {
+  //     events.forEach(e => window.ethereum.removeListener(e, handleChange));
+  //   };
+  // }, [init, state.artifact]);
 
   return (
     <EthContext.Provider value={{
       state,
-      dispatch
-    }}>
+      dispatch,
+      handleConnectWallet,
+      isConnect
+    }}
+    >
       {children}
     </EthContext.Provider>
   );

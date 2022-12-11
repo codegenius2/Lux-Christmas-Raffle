@@ -5,9 +5,12 @@ function App() {
  
  
   return (
+    <>
     <EthProvider>
       <Home />
     </EthProvider>
+    </>
+    
   );
 }
 

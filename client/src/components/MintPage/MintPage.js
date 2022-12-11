@@ -9,6 +9,9 @@ const MintPage = ({
   number,
   mint,
   mintPriceInETH,
+  handleConnectWallet,
+  accounts,
+  isConnect
 }) => {
   return (
     <>
@@ -40,10 +43,13 @@ const MintPage = ({
             )}
           </p>
           <p>
-            The price of the collectible is {mintPrice / 1000000000000000000}{" "}
+          The price of the collectible is 0.79
             ETH ~ $1000
+            {/* The price of the collectible is {mintPrice / 1000000000000000000}{" "}
+            ETH ~ $1000 */}
           </p>
         </div>
+        {isConnect ? <span className="mintpage-connect-text">{`Connected to ${accounts[0].slice(0,5)}...${accounts[0].slice(accounts[0].length-5, accounts[0].length)}`}</span> : <button onClick={handleConnectWallet}>Connect</button>}
         {isMintOn && (
           <>
             <div className="select-mint">
@@ -66,7 +72,10 @@ const MintPage = ({
               </span>
             </div>
             <span className="mint-ou">OR</span>
-            <CrossmintPayButton
+            
+          </>
+        )}
+        <CrossmintPayButton
               className="crossmint-button"
               clientId="5f7fdf88-f866-45b0-b5e2-f340aa62ae44"
               mintConfig={{
@@ -75,8 +84,6 @@ const MintPage = ({
                 _quantity: "1",
               }}
             />
-          </>
-        )}
       </div>
     </>
   );

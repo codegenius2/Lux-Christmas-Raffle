@@ -11,15 +11,11 @@ import web3 from "web3";
 export default function Home() {
   const {
     state: { contract, accounts, isOwner, isMintOn, mintPrice },
+    handleConnectWallet,
+    isConnect
   } = useEth();
 
   const [number, setNumber] = useState(0);
-  // Chaque composant doit gérer son state
-  // Informations non nécéssaires pour admin
-  // Number dans AdminPage changer le nom de variable
-  // Mettre la fonction mint sur admin et sur mintpage (client)
-  // si logique differente entre les deux composants vaut mieux les séparer
-  // si même logique sur les deux --> home.jsx
 
   const handleNumberChange = (e) => {
     setNumber(parseInt(e.target.value));
@@ -139,6 +135,9 @@ export default function Home() {
                   number={number}
                   mint={mint}
                   mintPriceInETH={mintPriceInETH}
+                  handleConnectWallet={handleConnectWallet}
+                  accounts={accounts}
+                  isConnect={isConnect}
                 />
               )}
             </div>
