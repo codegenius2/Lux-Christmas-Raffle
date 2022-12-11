@@ -44,13 +44,10 @@ const MintPage = ({
           </p>
           <p>
             The price of the collectible is 0,79
-            {/* {mintPrice / 1000000000000000000}{" "} */}
-            ETH ~ $1000
-            {/* The price of the collectible is {mintPrice / 1000000000000000000}{" "}
-            ETH ~ $1000 */}
+            ETH ~ $1000  
           </p>
         </div>
-        {isConnect ? <span className="mintpage-connect-text">{`Connected to ${accounts[0].slice(0,5)}...${accounts[0].slice(accounts[0].length-5, accounts[0].length)}`}</span> : <button className="button-28 mintpage-connect-button" onClick={handleConnectWallet}>Connect wallet</button>}
+        {isConnect ? "" : <button className="button-28 mintpage-connect-button" onClick={handleConnectWallet}>Connect wallet</button>}
         {isMintOn && (
           <>
             <div className="select-mint">
