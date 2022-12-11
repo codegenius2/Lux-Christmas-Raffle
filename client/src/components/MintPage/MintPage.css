@@ -13,7 +13,7 @@
     line-height: 130%;
   }
   .text-mint-container > p > span > a {
-    text-decoration: none;
+    text-decoration: underline;
     color: black;
   }
   .text-mint-container > p > span > a:hover {

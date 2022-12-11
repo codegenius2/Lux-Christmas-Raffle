@@ -28,13 +28,13 @@ const MintPage = ({
               </span>
             ) : (
               <span>
-                The Christmas sale coming soon! Discover the project by clicking{" "}
+                The Christmas sale coming soon! Discover the project by{" "}
                 <a
                   href="https://resorts-nft.com"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  here
+                  clicking here
                 </a>
               </span>
             )}
