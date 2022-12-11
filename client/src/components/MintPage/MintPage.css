@@ -20,6 +20,9 @@
     color: #bbafa9;
     text-decoration: underline;
   }
+  .mintpage-connect-button {
+    width: 200px !important;
+  }
   .select-mint {
     display: flex;
     justify-content: space-between;

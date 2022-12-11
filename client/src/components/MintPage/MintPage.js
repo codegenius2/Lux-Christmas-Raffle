@@ -20,41 +20,37 @@ const MintPage = ({
           <p>
             {isMintOn ? (
               <span>
-                The Christmas sale is open! Discover the project by clicking{" "}
+                The Christmas sale is open! Discover the project by{" "}
                 <a
-                  href="https://resorts-nft.com"
+                  href="https://luxresorts-nft.com"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  here
+                 clicking here
                 </a>
               </span>
             ) : (
               <span>
-                The Christmas sale coming soon! Discover the project by clicking{" "}
+                The Christmas sale coming soon! Discover the project by{" "}
                 <a
-                  href="https://resorts-nft.com"
+                  href="https://luxresorts-nft.com"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  here
+                  clicking here
                 </a>
               </span>
             )}
           </p>
           <p>
-<<<<<<< HEAD
-          The price of the collectible is 0.79
-=======
             The price of the collectible is 0,79
             {/* {mintPrice / 1000000000000000000}{" "} */}
->>>>>>> 6cce674efba391882828f6c9c3fbf3a9fc802447
             ETH ~ $1000
             {/* The price of the collectible is {mintPrice / 1000000000000000000}{" "}
             ETH ~ $1000 */}
           </p>
         </div>
-        {isConnect ? <span className="mintpage-connect-text">{`Connected to ${accounts[0].slice(0,5)}...${accounts[0].slice(accounts[0].length-5, accounts[0].length)}`}</span> : <button onClick={handleConnectWallet}>Connect</button>}
+        {isConnect ? <span className="mintpage-connect-text">{`Connected to ${accounts[0].slice(0,5)}...${accounts[0].slice(accounts[0].length-5, accounts[0].length)}`}</span> : <button className="button-28 mintpage-connect-button" onClick={handleConnectWallet}>Connect wallet</button>}
         {isMintOn && (
           <>
             <div className="select-mint">
@@ -77,20 +73,6 @@ const MintPage = ({
               </span>
             </div>
             <span className="mint-ou">OR</span>
-<<<<<<< HEAD
-            
-          </>
-        )}
-        <CrossmintPayButton
-              className="crossmint-button"
-              clientId="5f7fdf88-f866-45b0-b5e2-f340aa62ae44"
-              mintConfig={{
-                type: "erc-721",
-                totalPrice: `${mintPriceInETH}`,
-                _quantity: "1",
-              }}
-            />
-=======
           </>
         )}
         <CrossmintPayButton
@@ -102,7 +84,6 @@ const MintPage = ({
             _quantity: "1",
           }}
         />
->>>>>>> 6cce674efba391882828f6c9c3fbf3a9fc802447
       </div>
     </>
   );
