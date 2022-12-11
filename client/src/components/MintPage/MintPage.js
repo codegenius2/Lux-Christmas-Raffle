@@ -30,7 +30,7 @@ const MintPage = ({
               <span>
                 The Christmas sale is open! Discover the project by{" "}
                 <a
-                  href="https://resorts-nft.com"
+                  href="https://luxresorts-nft.com/"
                   target="_blank"
                   rel="noreferrer"
                 >
