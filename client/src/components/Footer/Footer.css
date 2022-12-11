@@ -98,6 +98,13 @@ footer {
 
 /* PC  */
 
+@media (min-width:600px) and (min-height:500px) and (max-width:1470px) and (max-height:850px)
+{
+  footer {
+    height: 8vh;
+  }
+}
+
 @media (min-width: 1024px) {
   .footer-mint > span {
     font-size: 1.2em;
@@ -126,6 +133,16 @@ footer {
     width: 2.5em !important;
   }
 }
+
+/* Specials size laptop */
+@media (min-width:1200px) and (min-height:400px) and (max-width:1470px) and (max-height:750px) 
+{
+  .icons-socials{
+    height: 2.5em!important;
+    width: 2.5em!important;
+  }
+}
+
 
 @media (min-width: 1200px) {
   .footer-mint > span {

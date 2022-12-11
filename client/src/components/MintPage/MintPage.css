@@ -13,7 +13,7 @@
     line-height: 130%;
   }
   .text-mint-container > p > span > a {
-    text-decoration: none;
+    text-decoration: underline;
     color: black;
   }
   .text-mint-container > p > span > a:hover {
@@ -189,6 +189,15 @@
 {
   .mint-selector{
     height: 125%;
+    /* background-color: red; */
+  }
+}
+
+@media (min-width:600px) and (min-height:500px) and (max-width:1470px) and (max-height:850px)
+{
+  .mint-selector{
+    /* background-color: yellow; */
+    /* height: 130%; */
   }
 }
 

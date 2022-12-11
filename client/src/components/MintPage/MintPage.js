@@ -22,7 +22,7 @@ const MintPage = ({
               <span>
                 The Christmas sale is open! Discover the project by{" "}
                 <a
-                  href="https://luxresorts-nft.com"
+                  href="https://luxresorts-nft.com/"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -31,9 +31,9 @@ const MintPage = ({
               </span>
             ) : (
               <span>
-                The Christmas sale coming soon! Discover the project by{" "}
+                The Christmas sale is open! Discover the project by{" "}
                 <a
-                  href="https://luxresorts-nft.com"
+                  href="https://luxresorts-nft.com/"
                   target="_blank"
                   rel="noreferrer"
                 >

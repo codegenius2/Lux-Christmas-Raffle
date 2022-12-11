@@ -67,7 +67,6 @@ function EthProvider({ children }) {
   //   const events = ["chainChanged", "accountsChanged"];
   //   const handleChange = () => {
   //     init(state.artifact);
-  //     console.log("C'est zz");
   //   };
 
   //   events.forEach(e => window.ethereum.on(e, handleChange));
