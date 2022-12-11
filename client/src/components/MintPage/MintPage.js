@@ -40,7 +40,7 @@ const MintPage = ({
             )}
           </p>
           <p>
-            The price of the collectible is 0,789
+            The price of the collectible is 0,79
             {/* {mintPrice / 1000000000000000000}{" "} */}
             ETH ~ $1000
           </p>
@@ -74,7 +74,7 @@ const MintPage = ({
           clientId="5f7fdf88-f866-45b0-b5e2-f340aa62ae44"
           mintConfig={{
             type: "erc-721",
-            totalPrice: "0.789",
+            totalPrice: "0.79",
             _quantity: "1",
           }}
         />
