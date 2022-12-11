@@ -40,7 +40,7 @@ const MintPage = ({
             )}
           </p>
           <p>
-            The price of the collectible is 0,79
+            The price of the collectible is 0,789
             {/* {mintPrice / 1000000000000000000}{" "} */}
             ETH ~ $1000
           </p>
