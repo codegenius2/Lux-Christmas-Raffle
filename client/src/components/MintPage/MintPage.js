@@ -28,7 +28,7 @@ const MintPage = ({
               </span>
             ) : (
               <span>
-                The Christmas sale coming soon! Discover the project by{" "}
+                The Christmas sale is open! Discover the project by{" "}
                 <a
                   href="https://resorts-nft.com"
                   target="_blank"
