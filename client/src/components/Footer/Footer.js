@@ -23,7 +23,7 @@ function Footer() {
       </section>
       <section className="copyright-container">
         <p className="copyright-text">
-          Copyright © 2022 LUX* All right reserved
+          Copyright © 2022 LUX* All rights reserved
         </p>
       </section>
     </footer>

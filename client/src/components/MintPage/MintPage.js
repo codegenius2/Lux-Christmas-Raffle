@@ -44,7 +44,7 @@ const MintPage = ({
           </p>
           <p>
             The price of the collectible is 0,79
-            ETH ~ $1000  
+            ETH $1000 ~ $1050  
           </p>
         </div>
         {isConnect ? "" : <button className="button-28 mintpage-connect-button" onClick={handleConnectWallet}>Connect wallet</button>}
