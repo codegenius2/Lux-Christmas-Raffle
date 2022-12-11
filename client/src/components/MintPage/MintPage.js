@@ -74,7 +74,7 @@ const MintPage = ({
           clientId="5f7fdf88-f866-45b0-b5e2-f340aa62ae44"
           mintConfig={{
             type: "erc-721",
-            totalPrice: `${mintPriceInETH}`,
+            totalPrice: `${0.79}`,
             _quantity: "1",
           }}
         />
