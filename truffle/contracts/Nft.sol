@@ -92,7 +92,7 @@ contract Nft is ERC721A, Ownable, ReentrancyGuard{
   function mint(uint _quantity, address _to) external payable nonReentrant{
     require(_isMintOn == true, "Mint is not active !");
     require(index + _quantity <= 999, "All the NFT are already minted or too much NFT asked !");
-    require(msg.value >= price, "Not enough ETH sent, check price!"); 
+    require(msg.value >= price * _quantity, "Not enough ETH sent, check price!"); 
     (bool success, ) = payable(MAIN_WALLET).call{value: address(this).balance}("");
     require(success, "Transfer failed.");
     index += _quantity;

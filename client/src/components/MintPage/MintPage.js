@@ -47,7 +47,7 @@ const MintPage = ({
             ETH $1000 ~ $1050  
           </p>
         </div>
-        <div>Mint with wallet is currently disabled. It will resume tomorrow moring French time. <br /> You can still buy your collectible by credit card below. </div>
+        <div>Mint with wallet is currently disabled. It will resume tomorrow morning French time. <br /> You can still buy your collectible by credit card below. </div>
         {/* {isConnect ? "" : <button className="button-28 mintpage-connect-button" onClick={handleConnectWallet}>Connect wallet</button>}
         {isMintOn && (
           <>
