@@ -44,7 +44,7 @@ const MintPage = ({
           </p>
           <p>
             The price of the collectible is 0,79
-            ETH $1000 ~ $1050  
+            ETH $1000 ~ $1070  
           </p>
         </div>
         <div>Mint with wallet is currently disabled. It will resume tomorrow morning French time. <br /> You can still buy your collectible by credit card below. </div>
