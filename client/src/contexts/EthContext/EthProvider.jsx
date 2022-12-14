@@ -1,4 +1,4 @@
-import React, { useReducer, useCallback, useEffect } from "react";
+import React, { useReducer, useCallback } from "react";
 import { useState } from "react";
 import Web3 from "web3";
 import EthContext from "./EthContext";

@@ -43,12 +43,11 @@ const MintPage = ({
             )}
           </p>
           <p>
-            The price of the collectible is 0,79
-            ETH $1000 ~ $1070  
+            The price of the collectible is 0,765
+            ETH $1000 ~ $1050  
           </p>
         </div>
-        <div>Mint with wallet is currently disabled. It will resume tomorrow morning French time. <br /> You can still buy your collectible by credit card below. </div>
-        {/* {isConnect ? "" : <button className="button-28 mintpage-connect-button" onClick={handleConnectWallet}>Connect wallet</button>}
+        {isConnect ? "" : <button className="button-28 mintpage-connect-button" onClick={handleConnectWallet}>Connect wallet</button>}
         {isMintOn && (
           <>
             <div className="select-mint">
@@ -72,13 +71,13 @@ const MintPage = ({
             </div>
             <span className="mint-ou">OR</span>
           </>
-        )} */}
+        )}
         <CrossmintPayButton
           className="crossmint-button"
-          clientId="5f7fdf88-f866-45b0-b5e2-f340aa62ae44"
+          clientId="f2336d13-f3d3-4cbe-a8ab-36fd702742c0"
           mintConfig={{
             type: "erc-721",
-            totalPrice: "0.79",
+            totalPrice: "0.765",
             _quantity: "1",
           }}
         />
