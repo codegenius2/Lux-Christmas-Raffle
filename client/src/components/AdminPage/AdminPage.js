@@ -22,12 +22,9 @@ function AdminPage({
   checkNumberOfNftMinted,
   trackNumber,
   mintPriceInETH,
+  count
 }) {
-  var count = 0;
-  const handleCheckPrice = async () => {
-    await checkPrice();
-    count = 1;
-  };
+  
   const handleCopy = () => {
     navigator.clipboard.writeText(currentUri);
   }
@@ -100,7 +97,7 @@ function AdminPage({
                       Le prix du mint est de{" "}
                       {count === 0 ? mintPriceInETH : currentPrice} ETH
                     </span>
-                    <button onClick={handleCheckPrice}>Check price</button>
+                    <button onClick={checkPrice}>Check price</button>
                   </div>
                 </div>
                 <div className="admin-content-2-price-container">

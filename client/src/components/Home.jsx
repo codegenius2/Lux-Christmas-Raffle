@@ -25,9 +25,10 @@ export default function Home() {
     if (number === 0){
       return;
     }else{
+      const temp = mintPrice * number;
       contract.methods
         .mint(number, accounts[0])
-        .send({ from: accounts[0], value: mintPrice });
+        .send({ from: accounts[0], value: temp });
     }
   };
 
@@ -85,16 +86,16 @@ export default function Home() {
       .call({ from: accounts[0] });
     setTrackNumber(value);
   };
-  const [currentPrice, setCurrentPrice] = useState(mintPriceInETH);
-
+  const [currentPrice, setCurrentPrice] = useState("?");
+  const [count, setCount] = useState(0);
   const checkPrice = async () => {
     const value = await contract.methods
       .checkPrice()
       .call({ from: accounts[0] });
     const temp = value / 1000000000000000000;
     setCurrentPrice(temp);
+    setCount(1);
   };
- 
   return (
     <>
       <section className="page-mint">
@@ -126,6 +127,7 @@ export default function Home() {
                   checkPrice={checkPrice}
                   checkNumberOfNftMinted={checkNumberOfNftMinted}
                   trackNumber={trackNumber}
+                  count={count}
                 />
               ) : (
                 <MintPage
