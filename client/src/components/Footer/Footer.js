@@ -21,7 +21,7 @@ function Footer() {
             <FontAwesomeIcon icon={faWhatsapp} className="icons-socials"/>
           </a>
           <a href="https://www.instagram.com/luxresorts/" rel="noreferrer" target={"_blank"}>
-            <FontAwesomeIcon icon={faInstagram} className="icons-socials" />
+            <FontAwesomeIcon icon={faInstagram} className="icons-socials" target={"_blank"}/>
           </a>
         </div>
       </section>
