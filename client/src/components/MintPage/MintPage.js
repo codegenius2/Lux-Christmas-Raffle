@@ -11,7 +11,7 @@ const MintPage = ({
   mintPriceInETH,
   handleConnectWallet,
   accounts,
-  isConnect
+  isConnect,
 }) => {
   return (
     <>
@@ -26,7 +26,7 @@ const MintPage = ({
                   target="_blank"
                   rel="noreferrer"
                 >
-                 clicking here
+                  clicking here
                 </a>
               </span>
             ) : (
@@ -42,12 +42,18 @@ const MintPage = ({
               </span>
             )}
           </p>
-          <p>
-            The price of the collectible is 0,765
-            ETH $1000 ~ $1070  
-          </p>
+          <p>The price of the collectible is 0,765 ETH $1000 ~ $1070</p>
         </div>
-        {isConnect ? "" : <button className="button-28 mintpage-connect-button" onClick={handleConnectWallet}>Connect wallet</button>}
+        {isConnect ? (
+          ""
+        ) : (
+          <button
+            className="button-28 mintpage-connect-button"
+            onClick={handleConnectWallet}
+          >
+            Connect wallet
+          </button>
+        )}
         {isMintOn && (
           <>
             <div className="select-mint">
@@ -81,6 +87,11 @@ const MintPage = ({
             _quantity: "1",
           }}
         />
+        <div>
+          Need help ? Contact our 
+           <a href="https://wa.me/message/JQNMP7NMPCB3H1" target="_blank">WhatsApp hotline</a> a
+          member of our team will help you!
+        </div>
       </div>
     </>
   );

@@ -8,6 +8,13 @@
     text-align: center;
     flex-direction: column;
   }
+  .mint-selector a {
+    text-decoration: underline;
+    color: black;
+  }
+  .mint-selector a:hover{
+    color: #bbafa9;
+  }
   .text-mint-container{
     height: 20%;
     line-height: 130%;
